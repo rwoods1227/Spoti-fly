@@ -8,6 +8,7 @@ class Greeting extends React.Component {
   }
 
   render() {
+    let signedOutLink = "signed-out-link"; // gonna have to change up what is rendered here
     if (this.props.currentUser) {
       return (
         <div>
@@ -17,10 +18,17 @@ class Greeting extends React.Component {
       );
     } else {
       return (
-        <ul className="signed-out-links">
-          <li id="signed-out-link" key="signup"><Link to="/signup">Signup </Link></li>
-          <li id="signed-out-link" key="login"><Link to="/login"> Login</Link></li>
-        </ul>
+        <nav className="banner-nav">
+          <ul className="signed-out-links">
+            <li id="nav-link" key="Premium"><Link to="/">Premium </Link></li>
+            <li id="nav-link" key="Help"><Link to="/">Help</Link></li>
+            <li id="nav-link" key="Download"><Link to="/">Download</Link></li>
+            <li id="nav-separator" key="separator"></li>
+
+            <li id="signed-out-link" key="signup"><Link to="/signup">Signup </Link></li>
+            <li id="signed-out-link" key="login"><Link to="/login"> Login</Link></li>
+          </ul>
+        </nav>
       )
     }
   }

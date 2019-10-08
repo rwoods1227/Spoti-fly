@@ -4,7 +4,7 @@ import { signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({ // where to use ownProps?
   errors: state.errors, // maybe different
-  formType: "signup"
+  formType: "signup",
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {

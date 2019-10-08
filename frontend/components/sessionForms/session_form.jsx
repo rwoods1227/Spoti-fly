@@ -31,6 +31,7 @@ class SessionForm extends React.Component {
       <li key={i}>{error}</li>
     ))
 
+
     if (this.props.formType === "signup") {
 
       return (

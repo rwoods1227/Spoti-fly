@@ -176,19 +176,70 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ //import SpotiflyLogo from "../app/assets/images/Spotifly.png";
+
+var App = function App(props) {
+  // change banner classes for styling based on url path
+  var headerClass = "banner";
+  var outerDivClass = "";
+  var greetingContainerBoolean = "";
+
+  switch (props.location.pathname) {
+    case "/signup":
+      headerClass += " signup";
+      outerDivClass += "signup-div";
+      greetingContainerBoolean += "hidden";
+      break;
+
+    case "/login":
+      headerClass += " login";
+      outerDivClass += "login-div";
+      greetingContainerBoolean += "hidden";
+      break;
+
+    case "/account":
+      headerClass += " account";
+      outerDivClass += "account-div";
+      break;
+
+    default:
+      headerClass += " default";
+      outerDivClass += "default-div";
+      break;
+  } //<img src={SpotiflyLogo} alt="Spotifly Logo"/>
+  // <a href="" className="logo-link">
+  //   <img src={window.logo} alt="Spotifly Logo" />
+  // </a> 
 
 
-var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Spotifly"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "wrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": outerDivClass
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: headerClass
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "banner-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logo-wrapper"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/",
+    className: "logo-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.logo,
+    alt: "Spotifly Logo"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: greetingContainerBoolean
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     path: "/login",
     component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     path: "/signup",
     component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }));
+  })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(App));
 
 /***/ }),
 
@@ -239,14 +290,36 @@ function (_React$Component) {
   _createClass(Greeting, [{
     key: "render",
     value: function render() {
+      var signedOutLink = "signed-out-link"; // gonna have to change up what is rendered here
+
       if (this.props.currentUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.props.logout
         }, "Logout"));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+          className: "banner-nav"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "signed-out-links"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Premium"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Premium ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Help"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Download"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Download")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-separator",
+          key: "separator"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "signed-out-link",
           key: "signup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -256,7 +329,7 @@ function (_React$Component) {
           key: "login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"
-        }, " Login")));
+        }, " Login"))));
       }
     }
   }]);
