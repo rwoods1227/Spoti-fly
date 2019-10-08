@@ -29,5 +29,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwoods1227/Spoti-fly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rwoods1227/Spoti-fly/issues"
+  },
+  "homepage": "https://github.com/rwoods1227/Spoti-fly#readme"
 }
