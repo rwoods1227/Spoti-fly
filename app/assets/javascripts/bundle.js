@@ -221,7 +221,7 @@ var App = function App(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "wrap"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": outerDivClass
+    className: outerDivClass
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: headerClass
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -299,9 +299,35 @@ function (_React$Component) {
       var signedOutLink = "signed-out-link"; // gonna have to change up what is rendered here
 
       if (this.props.currentUser) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+          className: "banner-nav"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "signed-out-links"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Premium"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Premium ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Help"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-link",
+          key: "Download"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
+        }, "Download")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "nav-separator",
+          key: "separator"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "nav-user-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "signed-in-username"
+        }, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.props.logout
-        }, "Logout"));
+        }, "Logout"))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "banner-nav"

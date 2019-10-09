@@ -299,5 +299,8 @@ body{
    background-color: #1ed760;
  }
 
+ .signed-in-username{
+   color: #1ed760;
+ }
  /* still need to do styling for logged in user home page and figure out how greeting
  and the other renders fit into that */

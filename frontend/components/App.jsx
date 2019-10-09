@@ -43,7 +43,7 @@ const App = (props) => {
   // </a> 
   return(
   <div className="wrap">
-    <div class={outerDivClass}>
+    <div className={outerDivClass}>
       <header className={headerClass}>
         <div className={bannerContainer}>
           <div className={logoWrapper}>
