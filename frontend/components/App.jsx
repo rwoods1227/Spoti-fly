@@ -11,16 +11,22 @@ const App = (props) => {
   let headerClass = "banner";
   let outerDivClass = "";
   let greetingContainerBoolean = "";
+  let bannerContainer= "banner-container";
+  let logoWrapper = "logo-wrapper";
   switch (props.location.pathname) {
     case "/signup":
       headerClass += " signup";
       outerDivClass += "signup-div";
-      greetingContainerBoolean +="hidden";
+      greetingContainerBoolean += "hidden";
+      bannerContainer += " signup";
+      logoWrapper += " signup";
       break;
     case "/login":
       headerClass += " login";
       outerDivClass += "login-div";
       greetingContainerBoolean += "hidden";
+      bannerContainer += " login";
+      logoWrapper += " login";
       break;
     case "/account":
       headerClass += " account";
@@ -39,8 +45,8 @@ const App = (props) => {
   <div className="wrap">
     <div class={outerDivClass}>
       <header className={headerClass}>
-        <div className="banner-container">
-          <div className="logo-wrapper">
+        <div className={bannerContainer}>
+          <div className={logoWrapper}>
             <Link to="/" className="logo-link">
               <img src={window.logo} alt="Spotifly Logo" />
             </Link>

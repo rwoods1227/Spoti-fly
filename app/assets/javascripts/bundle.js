@@ -183,18 +183,24 @@ var App = function App(props) {
   var headerClass = "banner";
   var outerDivClass = "";
   var greetingContainerBoolean = "";
+  var bannerContainer = "banner-container";
+  var logoWrapper = "logo-wrapper";
 
   switch (props.location.pathname) {
     case "/signup":
       headerClass += " signup";
       outerDivClass += "signup-div";
       greetingContainerBoolean += "hidden";
+      bannerContainer += " signup";
+      logoWrapper += " signup";
       break;
 
     case "/login":
       headerClass += " login";
       outerDivClass += "login-div";
       greetingContainerBoolean += "hidden";
+      bannerContainer += " login";
+      logoWrapper += " login";
       break;
 
     case "/account":
@@ -219,9 +225,9 @@ var App = function App(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: headerClass
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "banner-container"
+    className: bannerContainer
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logo-wrapper"
+    className: logoWrapper
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/",
     className: "logo-link"
@@ -530,35 +536,85 @@ function (_React$Component) {
       });
 
       if (this.props.formType === "signup") {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/login"
-        }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "User Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          value: this.state.username,
-          onChange: this.handleInput("username")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "signup-form-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "signup-form-content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "signup-form-title"
+        }, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          id: "signup-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "signup-form-ul"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "signup-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.email,
+          placeholder: "Email",
           onChange: this.handleInput("email")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "signup-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          value: this.state.email,
+          placeholder: "Confirm Email(not functional)",
+          onChange: this.handleInput("email")
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "signup-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
           value: this.state.password,
+          placeholder: "Password",
           onChange: this.handleInput("password")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.handleSubmit
-        }, "Sign UP!")));
-      } else if (this.props.formType === "login") {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/signup"
-        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "User Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "signup-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
+          value: this.state.username,
+          placeholder: "Username",
           onChange: this.handleInput("username")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "password",
-          onChange: this.handleInput("password")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "signup-button",
           onClick: this.handleSubmit
-        }, "Log In")));
+        }, "Sign Up!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "signup-form-end"
+        }, "Already have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/login"
+        }, "Log in"))));
+      } else if (this.props.formType === "login") {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "login-form-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "login-form-content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "login-form-title"
+        }, "Log in with your Username and Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          id: "login-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "login-form-ul"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "login-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          value: this.state.username,
+          placeholder: "Username",
+          onChange: this.handleInput("username")
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "login-form-li"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "password",
+          value: this.state.password,
+          placeholder: "Password",
+          onChange: this.handleInput("password")
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "login-button",
+          onClick: this.handleSubmit
+        }, "Log In")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "login-form-end"
+        }, "No account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/signup"
+        }, "Sign Up")))); // maybe change up the signup-button if I have oodles of time, to be ultra pixel perfect clone
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
           to: "/"

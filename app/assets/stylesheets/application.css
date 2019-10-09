@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+   box-sizing: border-box;
+ }
+
 body{
   margin: 0;
   min-height: 100vh;
@@ -33,17 +38,44 @@ body{
   background-color: #FFF;
 }
 
- header {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   width: 100%;
+ input{
+    background-color: #FFF;
+    border: 1px solid #dfe0e6;
+    color: #1c1c1f;
+    font-size: .9375em;
+    line-height: normal;
+    margin: 0;
  }
 
  img{
   width:100%;
   height:100%;
  }
+
+ fieldset {
+   border: 0;
+   padding: 0;
+ }
+
+ .banner.default, .banner.account{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 100%;
+ }
+
+ .banner.signup, .banner.login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #FFF;
+  padding: 1.5em 0;
+  border-bottom: 1px solid lightgray;
+ }
+
+
+ 
 /* this is the color taken from spotify's websire */
   .logo-wrapper{
   color: #1ed760; 
@@ -55,8 +87,9 @@ body{
   display: inline-block;
  }
 
- .logo-wrapper{
-  display: inline-block;
+ .logo-wrapper.signup, .logo-wrapper.login {
+   height:200px;
+   width: 200px;
  }
 
 
@@ -94,7 +127,6 @@ body{
   text-decoration: none;
   color: #fff;
   display: block;
-  text-decoration: none;
   font-weight: 700;
   padding: 28px 17px;
   background-color: transparent;
@@ -126,6 +158,12 @@ body{
    padding: 0 15px;
  }
 
+ .banner-container.signup, .banner-container.login {
+   justify-content: center;
+   position: relative;
+   top: -60px;
+ }
+
  .banner-nav{
    display: inline-block;
  }
@@ -137,13 +175,13 @@ body{
  }
 
  .signup{
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   /* position: fixed; */
   z-index: 1020;
  }
 
  .login{
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
   /* position: fixed; */
   z-index: 1020;
  }
@@ -160,10 +198,106 @@ body{
    display: none;
  }
 
- *{
-   box-sizing: border-box;
+
+ .signup-form-container, .login-form-container{
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 970px;
  }
 
- /* .banner .signup{
+ .signup-form-content, .login-form-content{
+   margin: 0 auto;
+   max-width: 26.875em;
+   display: block !important;
+   border-radius: 5px 5px 0 0;
+ }
 
- } */
+ .signup-form-end, .login-form-end{
+   display: block;
+   margin: 0 0 1em;
+   text-align: center;
+   font-size: .9375em;
+ }
+
+ .signup-form-end > a, .login-form-end > a{
+  color: #1DB954;
+  text-decoration: none;
+  font-weight: 70;
+  background-color: transparent;
+  transition: color 0.3s ease;
+ }
+
+ .signup-form-end > a:hover, .login-form-end > a:hover{
+    color: #1ed760;
+ }
+
+ .signup-form-title, .login-form-title{
+   color: #1c1c1f;
+   margin-bottom: 1em;
+   font-size: 18px;
+   text-align: center;
+ }
+
+ #signup-form, #login-form{
+   position: relative;
+ }
+
+
+ .signup-form-ul, .login-form-ul{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ .signup-form-li, .login-form-li{
+   display: block;
+   margin-bottom: .625em;
+   text-align: left;
+   margin-bottom: 1em;
+ }
+
+ .signup-form-li > input, .login-form-li > input{
+   border-radius: 2px;
+   -webkit-appearance: none;
+   padding: 0 .75em;
+   width: 100%;
+   height: 48px;
+ }
+ /* stuff below pulled from spotify, it has like 8 classes for this button */
+ #signup-button, #login-button{
+   margin-bottom: 14px;
+   max-width: 320px;
+   margin-left: auto;
+   margin-right: auto;
+   color: #FFF;
+   background-color: #1DB954;
+   font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease;
+ }
+
+ #signup-button:hover, #login-button:hover{
+   background-color: #1ed760;
+ }
+
+ /* still need to do styling for logged in user home page and figure out how greeting
+ and the other renders fit into that */
