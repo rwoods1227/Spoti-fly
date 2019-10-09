@@ -1083,7 +1083,7 @@ __webpack_require__.r(__webpack_exports__);
 var signup = function signup(user) {
   return $.ajax({
     method: "POST",
-    url: "api/users",
+    url: "/api/users",
     data: {
       user: user
     }
@@ -1092,7 +1092,7 @@ var signup = function signup(user) {
 var login = function login(user) {
   return $.ajax({
     method: "POST",
-    url: "api/session",
+    url: "/api/session",
     data: {
       user: user
     }
@@ -1101,7 +1101,7 @@ var login = function login(user) {
 var logout = function logout() {
   return $.ajax({
     method: "DELETE",
-    url: "api/session"
+    url: "/api/session"
   });
 };
 
