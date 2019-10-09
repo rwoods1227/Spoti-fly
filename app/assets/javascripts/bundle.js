@@ -515,7 +515,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     // where to use ownProps?
-    errors: state.errors,
+    errors: state.errors.session,
     // maybe different
     formType: "login"
   };
@@ -626,11 +626,15 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var errors = this.props.errors.session.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: i
-        }, error);
-      });
+      var errors;
+
+      if (this.props.errors.length) {
+        errors = this.props.errors.map(function (error, i) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: i
+          }, error);
+        });
+      }
 
       if (this.props.formType === "signup") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -760,7 +764,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     // where to use ownProps?
-    errors: state.errors,
+    errors: state.errors.session,
     // maybe different
     formType: "signup"
   };
