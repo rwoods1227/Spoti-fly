@@ -37,10 +37,8 @@ const App = (props) => {
       outerDivClass += "default-div";
       break;
   }
-  //<img src={SpotiflyLogo} alt="Spotifly Logo"/>
-  // <a href="" className="logo-link">
-  //   <img src={window.logo} alt="Spotifly Logo" />
-  // </a> 
+
+  
   return(
   <div className="wrap">
     <div className={outerDivClass}>
@@ -59,8 +57,10 @@ const App = (props) => {
       
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      {/* <AuthRoute path="/account" component={GreetingContainer} /> */}
     </div>
   </div> 
   )
 };
+// reverse authroute for account page?
 export default withRouter(App);

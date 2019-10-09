@@ -11,12 +11,19 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/"));
+    this.props.processForm(user).then(() => this.props.history.push("/")); // could push /account here, would make more sense maybe, have to think about it
+  }
+
+  handleDemoLogin(e){
+    e.preventDefault();
+    let demoUser = { username: "hunter4", email: "hunter4@aol.com", password: "123456" };
+    this.props.handleDemoLogin(demoUser);
   }
 
   handleInput(type) {
@@ -62,6 +69,10 @@ class SessionForm extends React.Component {
               <button id="signup-button" onClick={this.handleSubmit}>Sign Up!</button>
             </form>
             <p className="signup-form-end">Already have an account?<Link to="/login">Log in</Link></p>
+            <div className="guest-login-wrap">
+              <p className="login-form-end">Guest Login</p>
+              <button id="login-button" onClick={this.handleDemoLogin}>Demo Login</button>
+            </div>
           </div>
         </div>
       )
@@ -88,6 +99,10 @@ class SessionForm extends React.Component {
               <button id="login-button" onClick={this.handleSubmit}>Log In</button>
             </form>
             <p className="login-form-end">No account?<Link to="/signup">Sign Up</Link></p>
+            <div className="guest-login-wrap">
+              <p className="login-form-end">Guest Login</p>
+              <button id="login-button" onClick={this.handleDemoLogin}>Demo Login</button>
+            </div>
           </div>
         </div>
       )// maybe change up the signup-button if I have oodles of time, to be ultra pixel perfect clone

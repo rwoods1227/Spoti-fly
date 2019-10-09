@@ -212,11 +212,7 @@ var App = function App(props) {
       headerClass += " default";
       outerDivClass += "default-div";
       break;
-  } //<img src={SpotiflyLogo} alt="Spotifly Logo"/>
-  // <a href="" className="logo-link">
-  //   <img src={window.logo} alt="Spotifly Logo" />
-  // </a> 
-
+  }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "wrap"
@@ -243,7 +239,8 @@ var App = function App(props) {
     path: "/signup",
     component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
-};
+}; // reverse authroute for account page?
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(App));
 
@@ -271,9 +268,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -288,16 +285,41 @@ function (_React$Component) {
   _inherits(Greeting, _React$Component);
 
   function Greeting(props) {
+    var _this;
+
     _classCallCheck(this, Greeting);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.toggleClass = _this.toggleClass.bind(_assertThisInitialized(_this));
+    _this.state = {
+      active: false
+    };
+    return _this;
   }
 
   _createClass(Greeting, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var demoUser = {
+        username: "hunter4",
+        email: "hunter4@aol.com",
+        password: "123456"
+      };
+      this.props.login(demoUser);
+    }
+  }, {
+    key: "toggleClass",
+    value: function toggleClass() {
+      var currentState = this.state.active;
+      this.setState({
+        active: !currentState
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var signedOutLink = "signed-out-link"; // gonna have to change up what is rendered here
-
       if (this.props.currentUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "banner-nav"
@@ -323,11 +345,34 @@ function (_React$Component) {
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "nav-user-li"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "signed-in-username"
-        }, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "nav-button",
+          onClick: this.toggleClass
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: "profile-icon",
+          src: window.avatarIcon,
+          alt: "profileIcon"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "nav-profile"
+        }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: this.state.active ? "nav-profile-dropdown" : "hidden"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "dropdown-ul"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "dropdown-li",
+          key: "Account"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          id: "account",
+          to: "/account"
+        }, "Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          id: "dropdown-li",
+          key: "Logout"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          id: "logout-button",
+          type: "submit",
+          value: "Logout",
           onClick: this.props.logout
-        }, "Logout"))));
+        })))))));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
           className: "banner-nav"
@@ -361,7 +406,14 @@ function (_React$Component) {
           key: "login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"
-        }, " Login"))));
+        }, " Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          className: "signed-out-link"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "signed-in-username"
+        }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "demo-login-button",
+          onClick: this.handleSubmit
+        }, "Demo Login"))));
       }
     }
   }]);
@@ -402,7 +454,11 @@ var mapDipatchToProps = function mapDipatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
-    }
+    },
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    } // come back later
+
   };
 };
 
@@ -469,6 +525,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    },
+    handleDemoLogin: function handleDemoLogin(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     }
   };
 };
@@ -529,6 +588,7 @@ function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoLogin = _this.handleDemoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -541,7 +601,18 @@ function (_React$Component) {
       var user = Object.assign({}, this.state);
       this.props.processForm(user).then(function () {
         return _this2.props.history.push("/");
-      });
+      }); // could push /account here, would make more sense maybe, have to think about it
+    }
+  }, {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(e) {
+      e.preventDefault();
+      var demoUser = {
+        username: "hunter4",
+        email: "hunter4@aol.com",
+        password: "123456"
+      };
+      this.props.handleDemoLogin(demoUser);
     }
   }, {
     key: "handleInput",
@@ -607,7 +678,14 @@ function (_React$Component) {
           className: "signup-form-end"
         }, "Already have an account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"
-        }, "Log in"))));
+        }, "Log in")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "guest-login-wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "login-form-end"
+        }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "login-button",
+          onClick: this.handleDemoLogin
+        }, "Demo Login"))));
       } else if (this.props.formType === "login") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
@@ -640,7 +718,14 @@ function (_React$Component) {
           className: "login-form-end"
         }, "No account?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signup"
-        }, "Sign Up")))); // maybe change up the signup-button if I have oodles of time, to be ultra pixel perfect clone
+        }, "Sign Up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "guest-login-wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "login-form-end"
+        }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          id: "login-button",
+          onClick: this.handleDemoLogin
+        }, "Demo Login")))); // maybe change up the signup-button if I have oodles of time, to be ultra pixel perfect clone
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
           to: "/"
@@ -685,6 +770,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
+    },
+    handleDemoLogin: function handleDemoLogin(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     }
   };
 };

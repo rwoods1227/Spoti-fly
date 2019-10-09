@@ -5,10 +5,25 @@ class Greeting extends React.Component {
 
   constructor(props) {
     super(props)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleClass = this.toggleClass.bind(this);
+    this.state ={active: false};
+
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    let demoUser = { username: "hunter4", email: "hunter4@aol.com", password: "123456" };
+    this.props.login(demoUser);
+  }
+
+  toggleClass() {
+    const currentState = this.state.active;
+    this.setState({ active: !currentState });
+  };
+
   render() {
-    let signedOutLink = "signed-out-link"; // gonna have to change up what is rendered here
+ 
     if (this.props.currentUser) {
       return (
         <nav className="banner-nav">
@@ -19,8 +34,21 @@ class Greeting extends React.Component {
             <li id="nav-separator" key="separator"></li>
 
             <li className="nav-user-li">
-              <p className="signed-in-username">Welcome {this.props.currentUser.username}</p>
-              <button onClick={this.props.logout}>Logout</button>
+              <div id="nav-button" onClick={this.toggleClass}>
+                <img id="profile-icon" src={window.avatarIcon} alt="profileIcon"/>
+                <p id="nav-profile">Profile</p>
+              </div>
+              <div className={this.state.active ? "nav-profile-dropdown" : "hidden"}>
+                {/* <div className="arrow-up"></div>  giving up on the tool tip triangle thing*/}
+                <ul className="dropdown-ul">
+                  <li id="dropdown-li" key="Account">
+                    <Link id="account" to="/account">Account</Link>
+                  </li>
+                  <li id="dropdown-li" key="Logout">
+                    <input id="logout-button" type="submit" value="Logout" onClick={this.props.logout}/>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </nav>
@@ -37,6 +65,10 @@ class Greeting extends React.Component {
 
             <li id="signed-out-link" key="signup"><Link to="/signup">Signup </Link></li>
             <li id="signed-out-link" key="login"><Link to="/login"> Login</Link></li>
+            <li className="signed-out-link">
+              <p className="signed-in-username">Guest Login</p>
+              <button id="demo-login-button" onClick={this.handleSubmit}>Demo Login</button>
+            </li> 
           </ul>
         </nav>
       )

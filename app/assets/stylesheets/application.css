@@ -14,6 +14,24 @@
  *= require_self
  */
 
+
+button{
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+
+
 *{
    box-sizing: border-box;
  }
@@ -57,7 +75,7 @@ body{
    padding: 0;
  }
 
- .banner.default, .banner.account{
+ .banner.default, .banner.account {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -103,7 +121,7 @@ body{
   
  }
 
- .signed-out-links > li{
+ .signed-out-links > li, .dropdown-ul >li{
   text-decoration: none;
   box-sizing: border-box;
   display: inline-block;
@@ -174,6 +192,18 @@ body{
   z-index: 1020;
  }
 
+ .account{
+  background-color:rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 1020;
+ }
+
+ /* .signed-in{
+  background-color: black;
+  position: fixed;
+  z-index: 1020;
+ }  not working but for signed in user*/
+
  .signup{
   /* background-color: rgba(0, 0, 0, 0.6); */
   /* position: fixed; */
@@ -186,13 +216,14 @@ body{
   z-index: 1020;
  }
 
- /* .wrap{
-   -webkit-box-flex: 1;
-    flex: 1;
-    background-color: #F037A5;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(-60%, #F037A5), color-stop(140%, #FAE62D));
-    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
- } */
+ .default-div, .account-div{
+   position: absolute;
+   width:100%;
+   height: 100%;
+   z-index: 0;
+   background-color: #F037A5;
+   background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+ }
 
  .hidden{
    display: none;
@@ -266,7 +297,7 @@ body{
    height: 48px;
  }
  /* stuff below pulled from spotify, it has like 8 classes for this button */
- #signup-button, #login-button{
+ #signup-button, #login-button, #demo-login-button{
    margin-bottom: 14px;
    max-width: 320px;
    margin-left: auto;
@@ -295,12 +326,110 @@ body{
     transition: background-color 0.3s ease;
  }
 
- #signup-button:hover, #login-button:hover{
+ #signup-button:hover, #login-button:hover, #demo-login0button:hover{
    background-color: #1ed760;
  }
 
  .signed-in-username{
    color: #1ed760;
  }
+
+ .guest-login-wrap{
+   display: flex;
+   flex-direction: column;
+   padding-top: 50px;
+ }
  /* still need to do styling for logged in user home page and figure out how greeting
  and the other renders fit into that */
+
+ #nav-button{
+  width: min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  padding-top: 5px;
+ }
+
+ #nav-profile, #account{
+  color: #d9dadc;
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0px 5px;
+  background-color: transparent;
+  line-height: 1;
+ }
+
+ #profile-icon{
+   width:40px;
+   height: 40px;
+ }
+
+ .nav-user-li{
+   position: relative;
+ }
+.nav-profile-dropdown{
+ position: absolute;
+ background-color: #fff;
+ min-width: 100px;
+ overflow: auto;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+ right:5px;
+}
+
+#account{
+  color: black;
+  cursor: pointer;
+}
+
+#dropdown-li > a{
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-weight: 700;
+  padding: 15px 17px;
+  background-color: transparent;
+  text-align: center;
+}
+.dropdown-ul{
+display: block;
+text-align: center;
+line-height: 0;
+justify-content: space-between;
+list-style: none;
+padding-left:0;
+padding-right:25px;
+}
+ 
+#logout-button{
+  text-decoration: none;
+  color: #d9dadc;
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 17px;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+#logout-button:hover, #account:hover{
+  color:blue;
+}
+
+#demo-login-button{
+  padding: 0px 0px;
+}
+/* .arrow-up {
+  width: 0; 
+  height: 0; 
+  background: transparent;
+  position: absolute;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-bottom: 20px solid #fff;
+} */
