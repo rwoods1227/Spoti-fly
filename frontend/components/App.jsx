@@ -62,5 +62,5 @@ const App = (props) => {
   </div> 
   )
 };
-// reverse authroute for account page?
+// reverse authroute for account page? will do when components exist
 export default withRouter(App);

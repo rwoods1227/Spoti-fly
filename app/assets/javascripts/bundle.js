@@ -239,7 +239,7 @@ var App = function App(props) {
     path: "/signup",
     component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
-}; // reverse authroute for account page?
+}; // reverse authroute for account page? will do when components exist
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(App));

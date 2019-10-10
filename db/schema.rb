@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_202307) do
+ActiveRecord::Schema.define(version: 2019_10_10_210253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "song_id", null: false
+    t.integer "playlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["song_id"], name: "index_playlist_songs_on_song_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "songlist", default: [], array: true
+    t.boolean "private", default: true
+    t.string "description"
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_playlists_on_author_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "artist", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
