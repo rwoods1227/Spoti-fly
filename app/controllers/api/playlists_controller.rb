@@ -14,7 +14,16 @@ class Api::PlaylistsController < ApplicationController
   end
   
   def index
-    @playlists = Playlist.all
+    debugger 
+    if params[:author_id]
+      @playlists = Playlist.where(author_id: params[:author_id])
+    elsif params[:title]
+      @playlists = Playlist.where(title: params[:title])
+    else
+      @playlists = Playlist.all
+    end
+
+    #private isnt something I can search for, maybe be able to search for association of songs but later
   end
 
   def destroy
@@ -36,9 +45,10 @@ class Api::PlaylistsController < ApplicationController
   end
   
   def playlist_params
-    params.require(:playlist).permit(:title, :songlist, :private, :description, :author_id)
+    params.require(:playlist).permit(:title, :private, :description, :author_id)
   end
 
+  #having issues with strong params so removing for now
 end
 
 

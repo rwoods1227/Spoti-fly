@@ -1,1 +1,1 @@
-json.extract! playlist, :title, :songlist, :private, :description, :author_id
+json.extract! playlist, :title, :song_ids, :private, :description, :author_id

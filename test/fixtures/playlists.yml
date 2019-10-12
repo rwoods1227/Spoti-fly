@@ -4,7 +4,6 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string           not null
-#  songlist    :text             default("{}"), is an Array
 #  private     :boolean          default("true")
 #  description :string
 #  author_id   :integer          not null

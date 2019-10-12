@@ -12,4 +12,13 @@
 class Song < ApplicationRecord
 
    validates :title, :artist, presence: true
+
+
+    has_many :playlist_songs,
+    class_name: "PlaylistSong",
+    primary_key: :id,
+    foreign_key: :song_id
+
+    has_many :playlists, 
+    through: :playlist_songs
 end

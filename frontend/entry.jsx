@@ -3,6 +3,17 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store"
 import Root from "./components/root";
 
+import {fetchSong, fetchSongs} from "./util/song_api_util";
+import {fetchPlaylist, fetchPlaylists, createPlaylist, updatePlaylist, deletePlaylist} from "./util/playlist_api_util"
+
+window.fetchPlaylist = fetchPlaylist;
+window.fetchPlaylists = fetchPlaylists;
+window.createPlaylist = createPlaylist;
+window.updatePlaylist = updatePlaylist;
+window.deletePlaylist = deletePlaylist;
+
+window.fetchSong = fetchSong;
+window.fetchSongs = fetchSongs;
 
 
 document.addEventListener("DOMContentLoaded", () => {
