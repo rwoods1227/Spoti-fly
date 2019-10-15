@@ -15,10 +15,11 @@ class Song < ApplicationRecord
 
 
     has_many :playlist_songs,
-    class_name: "PlaylistSong",
+    class_name: :PlaylistSong,
     primary_key: :id,
     foreign_key: :song_id
 
     has_many :playlists, 
-    through: :playlist_songs
+    through: :playlist_songs,
+    source: :playlist
 end

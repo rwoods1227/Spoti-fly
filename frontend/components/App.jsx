@@ -4,7 +4,11 @@ import { Route, withRouter, Link } from 'react-router-dom';
 import LoginFormContainer from "./sessionForms/login_form_container"
 import SignupFormContainer from "./sessionForms/signup_form_container"
 import { AuthRoute } from '../util/route_util';
-//import SpotiflyLogo from "../app/assets/images/Spotifly.png";
+import PlaylistDetailContainer from "./playlists/playlist_detail_container";
+import PlaylistFormContainer from "./playlists/playlist_form_container";
+
+import PlaylistIndexContainer from "./playlists/playlist_index_container"
+
 const App = (props) => {
 
   // change banner classes for styling based on url path
@@ -37,30 +41,62 @@ const App = (props) => {
       outerDivClass += "default-div";
       break;
   }
+  // once the enter player button is clicked from splash page, player is not protected but functionality is limited
+  if (props.location.pathname.startsWith("/player")){
+    return (
+      <div className="wrap">
+        <div className="player-div">
+          <header className="player-sidebar">
+            <div className="player-sidebar-container">
+              <div className="player-logo">
+                <Link to="/player" className="player-logo-link">
+                  <img src={window.whiteLogo} alt="Spotifly Player Logo" />
+                </Link>
+              </div>
+              <div className="sidebar-greeting">
+                <PlaylistIndexContainer />
+              </div>
+            </div>
+          </header>
 
-  
-  return(
-  <div className="wrap">
-    <div className={outerDivClass}>
-      <header className={headerClass}>
-        <div className={bannerContainer}>
-          <div className={logoWrapper}>
-            <Link to="/" className="logo-link">
-              <img src={window.logo} alt="Spotifly Logo" />
+          <AuthRoute path="/login" component={LoginFormContainer} />
+          <AuthRoute path="/signup" component={SignupFormContainer} />
+          {/* should have some protected routes */}
+          <Route path="player/playlist/:playlistId" component={PlaylistDetailContainer} />
+          <Route exact path="player/createPlaylist" component={PlaylistFormContainer} /> 
+
+        </div>
+      </div>
+    )
+  }
+  else{
+    return (
+      <div className="wrap">
+        <div className={outerDivClass}>
+          <header className={headerClass}>
+            <div className={bannerContainer}>
+              <div className={logoWrapper}>
+                <Link to="/" className="logo-link">
+                  <img src={window.logo} alt="Spotifly Logo" />
+                </Link>
+              </div>
+              <div className={greetingContainerBoolean}>
+                <GreetingContainer />
+              </div>
+            </div>
+          </header>  
+          <div id="player-div-button">
+            <Link to="/player" id="player-link">
+              Go to Player
             </Link>
           </div>
-          <div className={greetingContainerBoolean}>
-            <GreetingContainer />
-          </div>
+          <AuthRoute path="/login" component={LoginFormContainer} />
+          <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
-      </header>
-      
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      {/* <AuthRoute path="/account" component={GreetingContainer} /> */}
-    </div>
-  </div> 
-  )
+      </div>
+    )
+  }
+ 
 };
 // reverse authroute for account page? will do when components exist
 export default withRouter(App);

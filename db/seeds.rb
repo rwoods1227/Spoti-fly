@@ -34,4 +34,4 @@ playlistSong5 = playlist2.playlist_songs.create!({song_id: song3.id})
 playlistSong6 = playlist3.playlist_songs.create!({song_id: song4.id})
 playlistSong7 = playlist3.playlist_songs.create!({song_id: song5.id})
 
-#nope wrong
+#fixed associations, works now

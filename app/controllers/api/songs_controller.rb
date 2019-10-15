@@ -6,7 +6,6 @@ class Api::SongsController < ApplicationController
   end
   
   def index
-    debugger 
     if params[:artist]
       @songs = Song.where(artist: params[:artist])
     elsif params[:title]

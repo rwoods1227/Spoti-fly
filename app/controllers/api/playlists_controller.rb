@@ -2,7 +2,6 @@ class Api::PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     if @playlist.save
-      login!(@playlist)
       render :show
     else
       render json: @playlist.errors.full_messages, status: 401
@@ -14,7 +13,6 @@ class Api::PlaylistsController < ApplicationController
   end
   
   def index
-    debugger 
     if params[:author_id]
       @playlists = Playlist.where(author_id: params[:author_id])
     elsif params[:title]
@@ -37,8 +35,14 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def update
+    @playlist = selected_playlist
+    @playlist.update_attributes(playlist_params)
+    render :show
+    # if there is an error this may be wrong
   end
 
+
+ 
   private 
   def selected_playlist
     Playlist.find(params[:id])

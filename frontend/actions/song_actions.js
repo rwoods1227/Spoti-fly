@@ -14,14 +14,14 @@ const receiveSong = (song) => ({
   song
 })
 
-export const requestSongs = (filter) => (dispatch) => (
-  API.fetchSongs(filter).then(
-    songs => (dispatch(receiveSongs(songs)))
+export const requestSongs = (filter) => (dispatch) => {
+  return API.fetchSongs(filter).then(
+    songs => dispatch(receiveSongs(songs))
   )
-)// filter will be title or artist or maybe later playlists
+  };// filter will be title or artist or maybe later playlists
 
-export const requestSong = (id) => (dispatch) => (
-  API.fetchSong(id).then(
+export const requestSong = (id) => (dispatch) => {
+  return API.fetchSong(id).then(
     song => dispatch(receiveSong(song))
   )
-)
+  };

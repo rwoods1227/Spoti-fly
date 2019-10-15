@@ -66,7 +66,7 @@
    height: 48px;
  }
  /* stuff below pulled from spotify, it has like 8 classes for this button */
- #signup-button, #login-button, #demo-login-button{
+ #signup-button, #login-button, #demo-login-button, #player-div-button{
    margin-bottom: 14px;
    max-width: 320px;
    margin-left: auto;
@@ -95,4 +95,6 @@
     transition: background-color 0.3s ease;
  }
 
- 
+  #signup-button:hover, #login-button:hover, #demo-login-button:hover, #player-div-button:hover{
+   background-color: #1ed760;
+ }

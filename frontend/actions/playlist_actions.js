@@ -20,32 +20,32 @@ const removePlaylist = (playlistId) => ({
 })
 
 
-export const requestPlaylists = (filter) => (dispatch) => (
-  API.fetchPlaylists(filter).then(
+export const requestPlaylists = (filter) => (dispatch) => {
+  return API.fetchPlaylists(filter).then(
     playlists => (dispatch(receivePlaylists(playlists)))
   )
-)// filter comes from ajax and jbuilder (song_ids and index on controller)
+  };// filter comes from ajax and jbuilder (song_ids and index on controller)
 
-export const requestPlaylist = (id) => (dispatch) => (
-  API.fetchPlaylist(id).then(
+export const requestPlaylist = (id) => (dispatch) => {
+  return API.fetchPlaylist(id).then(
     playlist => dispatch(receivePlaylist(playlist))
   )
-)
+  };
 
-export const createPlaylist = (playlist) => (dispatch) => (
-  API.createPlaylist(playlist).then(
+export const createPlaylist = (playlist) => (dispatch) => {
+  return API.createPlaylist(playlist).then(
     playlist => dispatch(receivePlaylist(playlist))
   )
-)
+  };
 
-export const updatePlaylist = (playlist) => (dispatch) => (
-  API.updatePlaylist(playlist).then(
+export const updatePlaylist = (playlist) => (dispatch) => {
+  return API.updatePlaylist(playlist).then(
     playlist => dispatch(receivePlaylist(playlist))
   )
-)
+  };
 
-export const deletePlaylist = (id) => (dispatch) => (
-  API.deletePlaylist(id).then(
+export const deletePlaylist = (id) => (dispatch) => {
+  return API.deletePlaylist(id).then(
     playlist => dispatch(removePlaylist(id))
   )
-)
+  };
