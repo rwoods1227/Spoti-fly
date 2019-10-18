@@ -35,7 +35,7 @@ song15 = Song.create!({title: "Old Town Lamp", artist: "Too Many Moths to Feed"}
 song16 = Song.create!({title: "Old Town Lamp(remix1)", artist: "Too Many Moths to Feed(feat. Mo Skeet0)"})
 song17 = Song.create!({title: "Old Town Lamp(remix2)", artist: "Too Many Moths to Feed(feat. Daddy SongLegs)"})
 song18 = Song.create!({title: "Old Town Lamp(remix3)", artist: "Too Many Moths to Feed(feat. The Buzz)"})
-song19 = Song.create!({title: "Old Town Lamp(remix4)", artist: "Too Many Moths to Feed(feat. Mo Skeet0 and Daddy SongLegs)"})
+song19 = Song.create!({title: "Old Town Lamp(remix4)", artist: "Too Many Moths to Feed(feat. TMMtF)"})
 
 playlist1 = user1.playlists.create!({title: "XO-skeletons in my closet", private: true, description: "Favorite XO-Skeltons songs"})
 playlist2 = user1.playlists.create!({title: "Mantis Te'ouch", private: false, description: "Goth-christian-rock"})
@@ -47,7 +47,7 @@ playlist6 = user2.playlists.create!({title: "Daddy SongLegs greatest hits", priv
 
 playlist7 = user1.playlists.create!({title: "Buzz", private: true, description: "Buzzzzzzzzzz"}) #like 5 buzzz songs
 playlist8 = user1.playlists.create!({title: "8 Legs, 3 songs", private: false, description: "Daddy SongLegs songs"})
-playlist9 = user1.playlists.create!({title: "Too Many Moths to Feed greatest hits", private: false, description: "Too Many Moths to Feed songs"})
+playlist9 = user1.playlists.create!({title: "TMMtF greatest hits", private: false, description: "Too Many Moths to Feed songs"})
 
 playlist10 = user1.playlists.create!({title: "Lamp", private: true, description: "Lamp"})
 playlist11 = user1.playlists.create!({title: "Lamp", private: false, description: "Lamp"})
