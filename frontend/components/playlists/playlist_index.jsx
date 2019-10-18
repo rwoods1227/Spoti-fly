@@ -36,12 +36,12 @@ import { Route, Link } from "react-router-dom";
     if (this.props.currentUser) {
       return (
         <nav className="sidebar-nav">
-          {/* <Route path="player/playlist/:playlistId" component={PlaylistDetailContainer} />
-          <Route exact path="player/createPlaylist" component={PlaylistFormContainer} />  */}
+         
           <ul className="sidebar-links">
-            <li id="sidebar-nav-link" key="Home"><img id="sidebar-icon" src={window.homeIcon} alt="Add Playlist" /><Link to="/player">Home </Link></li>
-            <li id="sidebar-nav-link" key="Search"><img id="sidebar-icon" src={window.searchIcon} alt="Add Playlist" /><Link to="/player">Search</Link></li>
-            <li id="sidebar-nav-link" key="Your Library"><img id="sidebar-icon" src={window.libraryIcon} alt="Add Playlist" /><Link to="/player">Your Library</Link></li>
+            <li id="sidebar-nav-link" key="Home"><img id="sidebar-icon" src={window.homeIcon} alt="Home" /><Link to="/player">Home </Link></li>
+            <li id="sidebar-nav-link" key="Search"><img id="sidebar-icon" src={window.searchIcon} alt="Search" /><Link to="/player/search">Search</Link></li>
+            <li id="sidebar-nav-link" key="Your Library"><img id="sidebar-icon" src={window.libraryIcon} alt="Library" /><Link to="/player/playlists">Your Library</Link></li>
+            <li id="sidebar-nav-link" key="Songs"><img id="sidebar-icon" src={window.SongIcon} alt="Songs" /><Link to="/player/songs">Songs</Link></li>
 
             <li className="sidebar-nav-user-li">
               <h4 id="user-playlists-header">Playlists</h4>

@@ -14,6 +14,9 @@
    z-index: 0;
    background-color: rgb(44, 39, 42);
    background: linear-gradient(0.4turn, rgb(56, 24, 24), rgb(8, 6, 6));
+   display: flex;
+   flex-direction: row;
+   overflow: hidden;
  }
 
 .player-sidebar {
@@ -21,6 +24,7 @@
    flex-direction: column;
    justify-content: space-between;
    height: 100%;
+   width:240px;
  }
 
   .player-sidebar-container{
@@ -238,6 +242,8 @@
   background-color: gray;
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
+
+/* fix scrollbar in heroku*/
 
 #sidebar-icon{
   height:30px;

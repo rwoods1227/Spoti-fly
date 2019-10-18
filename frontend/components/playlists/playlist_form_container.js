@@ -3,9 +3,9 @@ import PlaylistForm from './playlist_form';
 import { createPlaylist } from '../../actions/playlist_actions';
 
 // need to add errors here when possible 
-const mapStateToProps = ({ entities, errors }) => ({
-  errors: errors.session,
-  currentUser: entities.users[session.id]
+const mapStateToProps = (state) => ({
+  errors: state.errors.session,
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = dispatch => ({

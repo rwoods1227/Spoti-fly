@@ -6,6 +6,10 @@ export const selectPlaylist = (state, playlistId) => {
   return state.entities.playlists[playlistId];
 };
 
+export const selectAllSongs = (state) => {
+  return Object.values(state.entities.songs);
+};
+
 export const selectSong = (state, songId) => {
   return state.entities.songs[songId]
 };

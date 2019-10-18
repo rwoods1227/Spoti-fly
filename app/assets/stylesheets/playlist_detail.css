@@ -1,0 +1,98 @@
+/* .playlist-form-container{
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 970px;
+ }
+
+ .playlist-form-content{
+   margin: 0 auto;
+   max-width: 26.875em;
+   display: block !important;
+   border-radius: 5px 5px 0 0;
+ } */
+
+
+ .playlist-detail-left-title, .playlist-detail-left-author, .playlist-detail-right-title{
+   color: #c4c4e6;
+   margin-bottom: 1em;
+   font-size: 24px;
+   text-align: center;
+ }
+
+ .playlist-detail-left-author{
+   font-size: 18px;
+ }
+
+ .playlist-detail-left-description{
+   color: #e8e8f1;
+   margin-bottom: 1em;
+   font-size: 14px;
+   text-align: center;
+ }
+ .playlist-detail{
+   position: relative;
+   
+   left: 43px;
+   display: flex;
+   flex-direction: row;
+ }
+
+
+ .playlist-detail-left-ul{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   min-width: 300px;
+ }
+
+ .playlist-detail-left-li{
+   display: block;
+   margin-bottom: .625em;
+   text-align: left;
+   margin-bottom: 1em;
+ }
+
+ #album-placeholder{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  left: 40px;
+  top: 10px;
+ }
+
+ 
+ /* stuff below pulled from spotify, it has like 8 classes for this button */
+ #edit-playlist-button{
+   margin-bottom: 14px;
+   max-width: 320px;
+   margin-left: auto;
+   margin-right: auto;
+   color: #FFF;
+   background-color: #1DB954;
+   font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease;
+ }
+
+  #edit-playlist-button:hover{
+   background-color: #1ed760;
+ }

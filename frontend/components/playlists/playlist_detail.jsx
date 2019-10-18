@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import Item from '../items/item';
+import SongItemContainer from '../songs/song_item_container';
 // import ItemDetailContainer from '../items/item_detail_container';
 
 class PlaylistDetail extends React.Component {
@@ -16,24 +16,30 @@ class PlaylistDetail extends React.Component {
 
   render() {
     const playlist = this.props.playlist;
-    debugger;
     if (!playlist) return null;
+
+
     return (
       <section className="playlist-detail">
-        <ul>
-          <li>
-            <h2>{playlist.name}</h2>
+        <ul className="playlist-detail-left-ul">
+          <img id="album-placeholder" src={window.playlistLogo} alt="Playlist Logo"/>
+          <li id="playlist-detail-left-li">
+            <h1 className="playlist-detail-left-title">{playlist.title}</h1>
           </li>
-          <li>{playlist.author.username}</li>
+          <li id="playlist-detail-left-li">
+            <h2 className="playlist-detail-left-author">Creata: {playlist.author.username}</h2>
+          </li>
+          <li id="playlist-detail-left-li">
+            <p className="playlist-detail-left-description">{playlist.description}</p>
+          </li>
         </ul>
-        {/* <section className="songlist">
-          <h3>Items</h3>
-          <ul className="toy-list">
-            {items.map(item => <Item key={item.name} item={item} />)}
+        <section className="songlist">
+          <h1 className="playlist-detail-right-title">Songs</h1>
+          <ul className="song-list-ul">
+            {playlist.songs.map((song,i) => <SongItemContainer key={i} song={song} inPlaylist={true}/>)}
           </ul>
         </section>
-          // this will be song stuff later
-        <Route path="/playlist/:playlistId/item/:itemId" component={ItemDetailContainer} /> */}
+        {/* <Route path="/playlist/:playlistId/item/:itemId" component={ItemDetailContainer} /> */}
       </section>
     );
   }

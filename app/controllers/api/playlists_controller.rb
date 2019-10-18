@@ -8,6 +8,10 @@ class Api::PlaylistsController < ApplicationController
     end
   end
 
+ #add song
+ #custom route 
+ 
+
   def show
     @playlist = selected_playlist
   end

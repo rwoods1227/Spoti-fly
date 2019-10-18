@@ -6,7 +6,7 @@ import SignupFormContainer from "./sessionForms/signup_form_container"
 import { AuthRoute } from '../util/route_util';
 import PlaylistDetailContainer from "./playlists/playlist_detail_container";
 import PlaylistFormContainer from "./playlists/playlist_form_container";
-
+import SongIndexContainer from "./songs/song_index_container"
 import PlaylistIndexContainer from "./playlists/playlist_index_container"
 
 const App = (props) => {
@@ -59,11 +59,16 @@ const App = (props) => {
             </div>
           </header>
 
+          {/* sidebar is above, any content to right is below, music player later */}
+
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
           {/* should have some protected routes */}
-          <Route path="player/playlist/:playlistId" component={PlaylistDetailContainer} />
-          <Route exact path="player/createPlaylist" component={PlaylistFormContainer} /> 
+          <Route path="/player/playlist/:playlistId" component={PlaylistDetailContainer} />
+          <Route exact path="/player/createPlaylist" component={PlaylistFormContainer} /> 
+          <Route exact path="/player/songs" component={SongIndexContainer} /> 
+          {/* <Route exact path="/player/search" component={SearchContainer} />
+           */}
 
         </div>
       </div>

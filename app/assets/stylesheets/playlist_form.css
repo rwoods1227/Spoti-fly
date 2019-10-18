@@ -1,0 +1,118 @@
+.playlist-form-container{
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 970px;
+ }
+
+ .playlist-form-content{
+   margin: 0 auto;
+   max-width: 26.875em;
+   display: block !important;
+   border-radius: 5px 5px 0 0;
+ }
+
+ .signup-form-end, .login-form-end{
+   display: block;
+   margin: 0 0 1em;
+   text-align: center;
+   font-size: .9375em;
+ }
+
+ .signup-form-end > a, .login-form-end > a{
+  color: #1DB954;
+  text-decoration: none;
+  font-weight: 70;
+  background-color: transparent;
+  transition: color 0.3s ease;
+ }
+
+ .signup-form-end > a:hover, .login-form-end > a:hover{
+    color: #1ed760;
+ }
+
+ .playlist-form-title{
+   color: #c4c4e6;
+   margin-bottom: 1em;
+   font-size: 24px;
+   text-align: center;
+ }
+
+ .playlist-form{
+   position: relative;
+ }
+
+
+ .playlist-form-ul{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+
+ .playlist-form-li{
+   display: block;
+   margin-bottom: .625em;
+   text-align: left;
+   margin-bottom: 1em;
+ }
+
+ .playlist-form-li > input, .playlist-form-li > textarea{
+   border-radius: 2px;
+   -webkit-appearance: none;
+   padding: 0 .75em;
+   width: 100%;
+   height: 48px;
+ }
+
+ .playlist-form-li > textarea{
+   height: 100px;
+   font-size:14px;
+ }
+
+ #checkbox-label{
+    font-size: 18px;
+    color: #c4c4e6;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+ }
+
+ #checkbox-label > input {
+   margin-left: 5px;
+   margin-top: 5px;
+ }
+
+ /* stuff below pulled from spotify, it has like 8 classes for this button */
+ #create-playlist-button{
+   margin-bottom: 14px;
+   max-width: 320px;
+   margin-left: auto;
+   margin-right: auto;
+   color: #FFF;
+   background-color: #1DB954;
+   font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease;
+ }
+
+  #create-playlist-button:hover{
+   background-color: #1ed760;
+ }
