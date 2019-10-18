@@ -54,7 +54,7 @@ class SongItem extends React.Component {
         if (playlist.author_id === this.props.currentUser.id) {
           return(
            <li id = "dropdown-li" key={playlist.id}>
-              <div id="add-song-button" onClick={this.addSong}>
+              <div id="add-song-button" onClick={()=> {this.addSong(playlist.id)}}>
                 <p>{playlist.title}</p>
               </div>
            </li >

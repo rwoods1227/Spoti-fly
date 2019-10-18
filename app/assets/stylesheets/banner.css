@@ -241,3 +241,11 @@ padding-right:25px;
 #logout-button:hover, #account:hover{
   color:blue;
 }
+
+#main-spotifly-logo{
+  width: 175px;
+  height: 150px;
+  position: relative;
+  top: -35px;
+  left: 25px;
+}

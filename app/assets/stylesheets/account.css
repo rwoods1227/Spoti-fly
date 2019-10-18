@@ -1,0 +1,56 @@
+.account-buttons-div{
+    padding-left: 450px;
+    padding-top: 75px;
+}
+
+
+
+#splash-button-div, #logout-button-account{
+   margin-bottom: 14px;
+   max-width: 320px;
+   color: #FFF;
+   background-color: #1DB954;
+   font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 10px 25px 10px;
+    border-width: 0;
+    letter-spacing: 2px;
+    /* min-width: 160px; */
+    text-transform: uppercase;
+    white-space: normal;
+    display: block;
+    /* width: 100%; */
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease;
+    position: relative;
+    margin-top: 20px;
+ }
+
+  #splash-button-div > a, #logout-button-account > a {
+    color: inherit;
+  }
+
+  #splash-button-div, #logout-button-account{
+    color: white;
+    background-color:transparent;
+    border: 1px solid white;
+  }
+
+  #logout-button-account:hover, #splash-button-div:hover{
+   transform: scale(1.05,1.05);
+ }
+
+
+ #account-button{
+   display: flex;
+    justify-content: center;
+    width: 100%;
+ }

@@ -7,7 +7,7 @@ const unAuth = ({ component: Component, path, loggedIn, exact }) => (
     path={path}
     exact={exact}
     render={props =>
-      loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      loggedIn ? <Component {...props} /> : <Redirect to="/player" />
     }
   />
 );
@@ -16,7 +16,7 @@ const mapStateToProps = state => {
   return { loggedIn: Boolean(state.session.id) };
 };
 
-export const AuthRoute = withRouter(
+export const UnAuthRoute = withRouter(
   connect(
     mapStateToProps,
     null

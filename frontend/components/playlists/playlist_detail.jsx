@@ -27,7 +27,7 @@ class PlaylistDetail extends React.Component {
             <h1 className="playlist-detail-left-title">{playlist.title}</h1>
           </li>
           <li id="playlist-detail-left-li">
-            <h2 className="playlist-detail-left-author">Creata: {playlist.author.username}</h2>
+            <h2 className="playlist-detail-left-author">Creator: {playlist.author.username}</h2>
           </li>
           <li id="playlist-detail-left-li">
             <p className="playlist-detail-left-description">{playlist.description}</p>

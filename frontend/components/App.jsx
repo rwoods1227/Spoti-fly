@@ -4,10 +4,13 @@ import { Route, withRouter, Link } from 'react-router-dom';
 import LoginFormContainer from "./sessionForms/login_form_container"
 import SignupFormContainer from "./sessionForms/signup_form_container"
 import { AuthRoute } from '../util/route_util';
+import {UnAuthRoute} from '../util/route_util_logged_out'
 import PlaylistDetailContainer from "./playlists/playlist_detail_container";
 import PlaylistFormContainer from "./playlists/playlist_form_container";
-import SongIndexContainer from "./songs/song_index_container"
-import PlaylistIndexContainer from "./playlists/playlist_index_container"
+import SongIndexContainer from "./songs/song_index_container";
+import PlaylistIndexContainer from "./playlists/playlist_index_container";
+import PlayerButton from "./util/player_button";
+import AccountButtonsContainer from './util/account_buttons_container'
 
 const App = (props) => {
 
@@ -17,6 +20,7 @@ const App = (props) => {
   let greetingContainerBoolean = "";
   let bannerContainer= "banner-container";
   let logoWrapper = "logo-wrapper";
+  let logoId = "main-spotifly-logo"
   switch (props.location.pathname) {
     case "/signup":
       headerClass += " signup";
@@ -24,6 +28,7 @@ const App = (props) => {
       greetingContainerBoolean += "hidden";
       bannerContainer += " signup";
       logoWrapper += " signup";
+      logoId = "auth-logo";
       break;
     case "/login":
       headerClass += " login";
@@ -31,6 +36,7 @@ const App = (props) => {
       greetingContainerBoolean += "hidden";
       bannerContainer += " login";
       logoWrapper += " login";
+      logoId = "auth-logo";
       break;
     case "/account":
       headerClass += " account";
@@ -60,7 +66,7 @@ const App = (props) => {
           </header>
 
           {/* sidebar is above, any content to right is below, music player later */}
-
+          <UnAuthRoute path="/player/settings/account" component={AccountButtonsContainer} />
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
           {/* should have some protected routes */}
@@ -82,7 +88,7 @@ const App = (props) => {
             <div className={bannerContainer}>
               <div className={logoWrapper}>
                 <Link to="/" className="logo-link">
-                  <img src={window.logo} alt="Spotifly Logo" />
+                  <img id={logoId} src={window.logo} alt="Spotifly Logo" />
                 </Link>
               </div>
               <div className={greetingContainerBoolean}>
@@ -90,11 +96,8 @@ const App = (props) => {
               </div>
             </div>
           </header>  
-          <div id="player-div-button">
-            <Link to="/player" id="player-link">
-              Go to Player
-            </Link>
-          </div>
+         
+          <Route exact path="/" component={PlayerButton} /> 
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
