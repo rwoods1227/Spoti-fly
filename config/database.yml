@@ -19,7 +19,6 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  url: <%= ENV['DATABASE_URL'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -81,7 +80,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  host: db
-  username: postgres
-  password: 
+  database: SpotiFly_production
+  username: SpotiFly
+  password: <%= ENV['SPOTIFLY_DATABASE_PASSWORD'] %>
