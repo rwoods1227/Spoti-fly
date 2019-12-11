@@ -14,6 +14,13 @@
 class User < ApplicationRecord
    attr_reader :password
 
+   has_many :playlists,
+    class_name: "Playlist",
+    primary_key: :id,
+    foreign_key: :author_id
+
+    
+
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true

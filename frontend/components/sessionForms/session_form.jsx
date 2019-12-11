@@ -34,9 +34,13 @@ class SessionForm extends React.Component {
 
 
   render() {
-    const errors = this.props.errors.session.map((error, i) => (
-      <li key={i}>{error}</li>
-    ))
+    let errors; 
+    if (this.props.errors.length){
+      errors = this.props.errors.map((error, i) => (
+        <li key={i}>{error}</li>
+      ))
+    }
+   
 
 
     if (this.props.formType === "signup") {
