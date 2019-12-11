@@ -254,12 +254,3 @@
 .sidebar-account-div{
   padding-top:20px;
 }
-
-
-
-           
-
-
-            <div className='question-title'>
-                {this.state.questionTitle}
-            </div>
