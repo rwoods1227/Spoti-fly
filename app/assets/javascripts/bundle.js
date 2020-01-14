@@ -661,14 +661,7 @@ function (_React$Component) {
           key: "login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"
-        }, " Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "signed-out-link"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "signed-in-username"
-        }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "demo-login-button",
-          onClick: this.handleSubmit
-        }, "Demo Login"))));
+        }, " Login"))));
       }
     }
   }]);

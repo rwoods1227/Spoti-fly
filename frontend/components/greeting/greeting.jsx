@@ -65,10 +65,6 @@ class Greeting extends React.Component {
 
             <li id="signed-out-link" key="signup"><Link to="/signup">Signup </Link></li>
             <li id="signed-out-link" key="login"><Link to="/login"> Login</Link></li>
-            <li className="signed-out-link">
-              <p className="signed-in-username">Guest Login</p>
-              <button id="demo-login-button" onClick={this.handleSubmit}>Demo Login</button>
-            </li> 
           </ul>
         </nav>
       )
