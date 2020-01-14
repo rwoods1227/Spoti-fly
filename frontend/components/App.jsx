@@ -11,6 +11,7 @@ import SongIndexContainer from "./songs/song_index_container";
 import PlaylistIndexContainer from "./playlists/playlist_index_container";
 import PlayerButton from "./util/player_button";
 import AccountButtonsContainer from './util/account_buttons_container'
+import Gallery from "./util/gallery";
 
 const App = (props) => {
 
@@ -95,14 +96,15 @@ const App = (props) => {
                 <GreetingContainer />
               </div>
             </div>
-          </header>  
-         
-          <Route exact path="/" component={PlayerButton} /> 
+          </header>
+
+          <Route exact path="/" component={PlayerButton} />
+          <Route exact path="/" component={Gallery} />
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
       </div>
-    )
+    );
   }
  
 };

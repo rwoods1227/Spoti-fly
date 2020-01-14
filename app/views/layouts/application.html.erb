@@ -31,6 +31,31 @@
     <script type="text/javascript">
       window.SongIcon = "<%= image_url('White-Song-Icon.png') %>"
     </script>
+    <script type="text/javascript">
+      window.Moth = "<%= image_url('moth-into-flame.jpg') %>"
+    </script>
+    <script type="text/javascript">
+      window.Buzz = "<%= image_url('the-buzz.jpg') %>"
+    </script>
+    <script type="text/javascript">
+      window.XO = "<%= image_url('XO-skeleton.jpg') %>"
+    </script>
+    <script type="text/javascript">
+      window.Dung = "<%= image_url('Dung-Beetles.jpg') %>"
+    </script>
+    <script type="text/javascript">
+      window.Daddy = "<%= image_url('Daddy-Songlegs.jpg') %>"
+    </script>
+    <script type="text/javascript">
+      const imgContent = document.querySelectorAll('.img-content-hover');
+      function showImgContent(e) {
+        for(var i = 0; i < imgContent.length; i++) {
+        imgContent[i].style.left = e.pageX + 'px';
+        imgContent[i].style.top = e.pageY + 'px';
+        }
+      };
+      document.addEventListener('mousemove', showImgContent);
+   </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag 'favicon.ico' %>
