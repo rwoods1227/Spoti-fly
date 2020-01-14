@@ -368,6 +368,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playlists_playlist_index_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./playlists/playlist_index_container */ "./frontend/components/playlists/playlist_index_container.js");
 /* harmony import */ var _util_player_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./util/player_button */ "./frontend/components/util/player_button.jsx");
 /* harmony import */ var _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./util/account_buttons_container */ "./frontend/components/util/account_buttons_container.js");
+/* harmony import */ var _util_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./util/gallery */ "./frontend/components/util/gallery.jsx");
+
 
 
 
@@ -486,6 +488,10 @@ var App = function App(props) {
       exact: true,
       path: "/",
       component: _util_player_button__WEBPACK_IMPORTED_MODULE_11__["default"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      exact: true,
+      path: "/",
+      component: _util_gallery__WEBPACK_IMPORTED_MODULE_13__["default"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
       path: "/login",
       component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -2055,6 +2061,130 @@ var mapDipatchToProps = function mapDipatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/util/gallery.jsx":
+/*!**********************************************!*\
+  !*** ./frontend/components/util/gallery.jsx ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Gallery = function Gallery() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    "class": "gallery"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "grid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "column-xs-12 column-md-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
+    "class": "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "gallery-img-size",
+    src: window.Moth
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
+    "class": "img-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "TMMTF"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "img-content-hover"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "TMMTF"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "column-xs-12 column-md-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
+    "class": "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "gallery-img-size",
+    src: window.Buzz
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
+    "class": "img-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "The Buzz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "img-content-hover"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "The Buzz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "column-xs-12 column-md-4"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
+    "class": "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "gallery-img-size",
+    src: window.XO
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
+    "class": "img-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "XO-Skeltons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "img-content-hover"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "XO-Skeltons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "column-xs-12 column-md-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
+    "class": "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "gallery-img-size",
+    src: window.Dung
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
+    "class": "img-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "The Dung Beetles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "img-content-hover"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "The Dung Beetles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "column-xs-12 column-md-6"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
+    "class": "img-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    id: "gallery-img-size",
+    src: window.Daddy
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
+    "class": "img-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "Daddy SongLegs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    "class": "img-content-hover"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    "class": "title"
+  }, "Daddy SongLegs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    "class": "category"
+  }, "Artist")))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Gallery);
+
+/***/ }),
+
 /***/ "./frontend/components/util/player_button.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/util/player_button.jsx ***!
@@ -2071,12 +2201,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var PlayerButton = function PlayerButton() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "gallery-writing"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "small-title"
+  }, "Recommended Artists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "big-para"
+  }, "Jump Back Into Spotifly, and listen to the hottest new Artists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/player",
     id: "player-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "player-div-button"
-  }, "Go to Player"));
+  }, "Open Web Player")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PlayerButton);
