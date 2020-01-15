@@ -2,6 +2,7 @@
   position: relative;
   left: 100px;
   min-width: 500px;
+  padding-bottom: 150px;
 }
 
 .song-list-ul{

@@ -12,6 +12,7 @@ import PlaylistIndexContainer from "./playlists/playlist_index_container";
 import PlayerButton from "./util/player_button";
 import AccountButtonsContainer from './util/account_buttons_container'
 import Gallery from "./util/gallery";
+import Player from "./player/player";
 
 const App = (props) => {
 
@@ -65,7 +66,9 @@ const App = (props) => {
               </div>
             </div>
           </header>
-
+          <div className="musicBar">
+            <Player />
+          </div>
           {/* sidebar is above, any content to right is below, music player later */}
           <UnAuthRoute path="/player/settings/account" component={AccountButtonsContainer} />
           <AuthRoute path="/login" component={LoginFormContainer} />
