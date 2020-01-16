@@ -21,14 +21,16 @@ const tracks = [
       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
     name: "MP3",
     desc: "Description 1",
-    src: "../../../app/assets/musicFiles/undertale2.mp3"
+    src:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
   },
   {
     img:
       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
     name: "MP3 #2",
     desc: "Description 2",
-    src: "../../../app/assets/musicFiles/undertale3.mp3"
+    src:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
   }
 ];
 
