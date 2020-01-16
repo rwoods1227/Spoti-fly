@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// import campfireStory from "../../../app/assets/musicFiles/undertale2.mp3"
+// import bootingUp from "../../../app/assets/musicFiles/undertale3.mp3";
 
-const campfireStory = "yourURLorIMPORTtoYOURmp3";
-const bootingUp = "yourURLorIMPORTtoYOURmp3";
 
 function getTime(time) {
   if (!isNaN(time)) {
@@ -15,6 +15,8 @@ function getTime(time) {
 class Player extends React.Component {
   constructor(props) {
     super(props);
+    this.sound1 = new Audio(campfireStory);
+    this.sound2 = new Audio(bootingUp);
     this.state = {
       selectedTrack: null,
       player: "stopped",
@@ -41,17 +43,17 @@ class Player extends React.Component {
       let track;
       switch (this.state.selectedTrack) {
         case "Campfire Story":
-          track = campfireStory;
+          track = sound1;
           break;
         case "Booting Up":
-          track = bootingUp;
+          track = sound2;
           break;
         default:
           break;
       }
       if (track) {
         this.player.src = track;
-        this.player.play();
+        this.player.play;
         this.setState({ player: "playing", duration: this.player.duration });
       }
     }

@@ -13,6 +13,26 @@ import PlayerButton from "./util/player_button";
 import AccountButtonsContainer from './util/account_buttons_container'
 import Gallery from "./util/gallery";
 import Player from "./player/player";
+import Playlist from "react-mp3-player";
+
+const tracks = [
+  {
+    img:
+      "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+    name: "MP3",
+    desc: "Description 1",
+    src: "../../../app/assets/musicFiles/undertale2.mp3"
+  },
+  {
+    img:
+      "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+    name: "MP3 #2",
+    desc: "Description 2",
+    src: "../../../app/assets/musicFiles/undertale3.mp3"
+  }
+];
+
+
 
 const App = (props) => {
 
@@ -66,9 +86,9 @@ const App = (props) => {
               </div>
             </div>
           </header>
-          <div className="musicBar">
-            <Player />
-          </div>
+          {/* <div className="musicBar"> */}
+            <Playlist tracks={tracks}/>
+          {/* </div> */}
           {/* sidebar is above, any content to right is below, music player later */}
           <UnAuthRoute path="/player/settings/account" component={AccountButtonsContainer} />
           <AuthRoute path="/login" component={LoginFormContainer} />
