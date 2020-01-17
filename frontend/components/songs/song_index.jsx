@@ -6,6 +6,7 @@ import { Route, Link } from "react-router-dom";
 class SongIndex extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   componentDidMount() {
@@ -19,7 +20,7 @@ class SongIndex extends React.Component {
         <section id="index-songlist" className="songlist">
           <h1 className="all-songs-title"> All Songs</h1>
           <ul className="song-list-ul">
-            {this.props.songs.map(song => <SongItemContainer key={song.id} song={song} currentUser={this.props.currentUser} inPlaylist={false} />)}
+            {this.props.songs.map(song => <SongItemContainer key={song.id} song={song} func={this.props.func} currentUser={this.props.currentUser} inPlaylist={false} />)}
           </ul>
         </section>
       );

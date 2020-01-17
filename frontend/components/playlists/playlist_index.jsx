@@ -40,7 +40,6 @@ import { Route, Link } from "react-router-dom";
           <ul className="sidebar-links">
             <li id="sidebar-nav-link" key="Home"><img id="sidebar-icon" src={window.homeIcon} alt="Home" /><Link to="/player">Home </Link></li>
             <li id="sidebar-nav-link" key="Search"><img id="sidebar-icon" src={window.searchIcon} alt="Search" /><Link to="/player/search">Search</Link></li>
-            <li id="sidebar-nav-link" key="Your Library"><img id="sidebar-icon" src={window.libraryIcon} alt="Library" /><Link to="/player/playlists">Your Library</Link></li>
             <li id="sidebar-nav-link" key="Songs"><img id="sidebar-icon" src={window.SongIcon} alt="Songs" /><Link to="/player/songs">Songs</Link></li>
 
             <li className="sidebar-nav-user-li">

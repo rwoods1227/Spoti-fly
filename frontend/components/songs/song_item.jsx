@@ -10,7 +10,8 @@ class SongItem extends React.Component {
     super(props);
     this.toggleClass = this.toggleClass.bind(this);
     this.state = { active: false };
-    this.addSong = this.addSong.bind(this)
+    this.addSong = this.addSong.bind(this);
+    this.songAddQueue = this.songAddQueue.bind(this);
   }
 
   // componentDidMount() {
@@ -18,11 +19,16 @@ class SongItem extends React.Component {
   //   this.props.requestPlaylists(filter);
   // }
  
-        // will not have time to implement 
-  //   addToQueue() {
-  //   const currentState = this.state.active;
-  //   this.setState({ active: !currentState });
-  // };
+ // button not implemented yet
+  songAddQueue() {
+   let track = [{
+     img: this.props.song.img,
+     name: this.props.song.title,
+     desc: this.props.song.artist,
+     src: this.props.song.src
+   }]
+   this.props.func(track);
+  };
 
       // this will change class of dropdown of currentuser.playlist from hidden to whatever new one is, also with a modal
   toggleClass() {
@@ -80,7 +86,7 @@ class SongItem extends React.Component {
             </ul>
           </div>
         </button>
-        <button className={songAddQueue} key="queue">Add to Queue</button>
+        <button className={songAddQueue} onClick={ () => this.songAddQueue()} key="queue">Play</button>
       </li>
     )
   }
