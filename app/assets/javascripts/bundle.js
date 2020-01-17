@@ -439,14 +439,14 @@ function (_React$Component) {
     _this.state = {
       tracks: [{
         img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-        name: "MP3",
-        desc: "Description 1",
-        src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
+        name: "Starter Song 1",
+        desc: "Song to initialize player",
+        src: "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3"
       }, {
         img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-        name: "MP3 #2",
-        desc: "Description 2",
-        src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
+        name: "Starter Song 2",
+        desc: "Song to initialize player",
+        src: "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
       }]
     };
     console.log(props);
@@ -462,7 +462,7 @@ function (_React$Component) {
       // console.log(newTracks);
 
       this.setState({
-        tracks: this.state.tracks.concat(evt)
+        tracks: evt.concat(this.state.tracks)
       });
     } // change banner classes for styling based on url path
 
@@ -535,7 +535,7 @@ function (_React$Component) {
           path: "/player",
           render: function render() {
             return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_mp3_player__WEBPACK_IMPORTED_MODULE_15__["default"], {
-              tracks: tracks.reverse()
+              tracks: tracks
             });
           }
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
@@ -1429,15 +1429,6 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/player/search"
         }, "Search")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "sidebar-nav-link",
-          key: "Your Library"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          id: "sidebar-icon",
-          src: window.libraryIcon,
-          alt: "Library"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/player/playlists"
-        }, "Your Library")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "sidebar-nav-link",
           key: "Songs"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

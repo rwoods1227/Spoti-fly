@@ -41,25 +41,25 @@ import Playlist from "react-mp3-player";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { tracks:
-      [
+    this.state = {
+      tracks: [
         {
           img:
             "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-          name: "MP3",
-          desc: "Description 1",
+          name: "Starter Song 1",
+          desc: "Song to initialize player",
           src:
-            "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
+            "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3"
         },
         {
           img:
             "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-          name: "MP3 #2",
-          desc: "Description 2",
+          name: "Starter Song 2",
+          desc: "Song to initialize player",
           src:
-            "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
+            "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
         }
-      ] 
+      ]
     };
     console.log(props)
   }
@@ -71,7 +71,7 @@ class App extends React.Component {
 
     // let newTracks = this.state.tracks.concat(evt);
     // console.log(newTracks);
-    this.setState({ tracks: this.state.tracks.concat(evt) });
+    this.setState({ tracks: evt.concat(this.state.tracks) });
   }
 
 
@@ -131,7 +131,7 @@ class App extends React.Component {
               path="/player"
               render={()=> (
                 <Playlist
-                  tracks={tracks.reverse()}
+                  tracks={tracks}
                 />
               )}
             />
