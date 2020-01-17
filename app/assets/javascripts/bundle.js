@@ -371,6 +371,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./util/gallery */ "./frontend/components/util/gallery.jsx");
 /* harmony import */ var _player_player__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./player/player */ "./frontend/components/player/player.jsx");
 /* harmony import */ var react_mp3_player__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-mp3-player */ "./node_modules/react-mp3-player/dist/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
@@ -387,138 +406,210 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var tracks = [{
-  img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-  name: "MP3",
-  desc: "Description 1",
-  src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
-}, {
-  img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-  name: "MP3 #2",
-  desc: "Description 2",
-  src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
-}];
+ // let tracks= [
+//   {
+//     img:
+//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+//     name: "MP3",
+//     desc: "Description 1",
+//     src:
+//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
+//   },
+//   {
+//     img:
+//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+//     name: "MP3 #2",
+//     desc: "Description 2",
+//     src:
+//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
+//   }
+// ]; 
 
-var App = function App(props) {
-  // change banner classes for styling based on url path
-  var headerClass = "banner";
-  var outerDivClass = "";
-  var greetingContainerBoolean = "";
-  var bannerContainer = "banner-container";
-  var logoWrapper = "logo-wrapper";
-  var logoId = "main-spotifly-logo";
+var App =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(App, _React$Component);
 
-  switch (props.location.pathname) {
-    case "/signup":
-      headerClass += " signup";
-      outerDivClass += "signup-div";
-      greetingContainerBoolean += "hidden";
-      bannerContainer += " signup";
-      logoWrapper += " signup";
-      logoId = "auth-logo";
-      break;
+  function App(props) {
+    var _this;
 
-    case "/login":
-      headerClass += " login";
-      outerDivClass += "login-div";
-      greetingContainerBoolean += "hidden";
-      bannerContainer += " login";
-      logoWrapper += " login";
-      logoId = "auth-logo";
-      break;
+    _classCallCheck(this, App);
 
-    case "/account":
-      headerClass += " account";
-      outerDivClass += "account-div";
-      break;
-
-    default:
-      headerClass += " default";
-      outerDivClass += "default-div";
-      break;
-  } // once the enter player button is clicked from splash page, player is not protected but functionality is limited
-
-
-  if (props.location.pathname.startsWith("/player")) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "wrap"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "player-div"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-      className: "player-sidebar"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "player-sidebar-container"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "player-logo"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/player",
-      className: "player-logo-link"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: window.whiteLogo,
-      alt: "Spotifly Player Logo"
-    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "sidebar-greeting"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_index_container__WEBPACK_IMPORTED_MODULE_10__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_mp3_player__WEBPACK_IMPORTED_MODULE_15__["default"], {
-      tracks: tracks
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
-      path: "/player/settings/account",
-      component: _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-      path: "/login",
-      component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-      path: "/signup",
-      component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      path: "/player/playlist/:playlistId",
-      component: _playlists_playlist_detail_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      exact: true,
-      path: "/player/createPlaylist",
-      component: _playlists_playlist_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      exact: true,
-      path: "/player/songs",
-      component: _songs_song_index_container__WEBPACK_IMPORTED_MODULE_9__["default"]
-    })));
-  } else {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "wrap"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: outerDivClass
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-      className: headerClass
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: bannerContainer
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: logoWrapper
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/",
-      className: "logo-link"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      id: logoId,
-      src: window.logo,
-      alt: "Spotifly Logo"
-    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: greetingContainerBoolean
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      exact: true,
-      path: "/",
-      component: _util_player_button__WEBPACK_IMPORTED_MODULE_11__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      exact: true,
-      path: "/",
-      component: _util_gallery__WEBPACK_IMPORTED_MODULE_13__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-      path: "/login",
-      component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
-      path: "/signup",
-      component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-    })));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      tracks: [{
+        img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+        name: "MP3",
+        desc: "Description 1",
+        src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
+      }, {
+        img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+        name: "MP3 #2",
+        desc: "Description 2",
+        src: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
+      }]
+    };
+    console.log(props);
+    return _this;
   }
-}; // reverse authroute for account page? will do when components exist
 
+  _createClass(App, [{
+    key: "updateTracks",
+    value: function updateTracks(evt) {
+      console.log("updateTracks");
+      console.log(evt);
+      console.log(this.state.tracks); // let newTracks = this.state.tracks.concat(evt);
+      // console.log(newTracks);
+
+      this.setState({
+        tracks: this.state.tracks.concat(evt)
+      });
+    } // change banner classes for styling based on url path
+
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var tracks = this.state.tracks;
+      var headerClass = "banner";
+      var outerDivClass = "";
+      var greetingContainerBoolean = "";
+      var bannerContainer = "banner-container";
+      var logoWrapper = "logo-wrapper";
+      var logoId = "main-spotifly-logo";
+
+      switch (this.props.location.pathname) {
+        case "/signup":
+          headerClass += " signup";
+          outerDivClass += "signup-div";
+          greetingContainerBoolean += "hidden";
+          bannerContainer += " signup";
+          logoWrapper += " signup";
+          logoId = "auth-logo";
+          break;
+
+        case "/login":
+          headerClass += " login";
+          outerDivClass += "login-div";
+          greetingContainerBoolean += "hidden";
+          bannerContainer += " login";
+          logoWrapper += " login";
+          logoId = "auth-logo";
+          break;
+
+        case "/account":
+          headerClass += " account";
+          outerDivClass += "account-div";
+          break;
+
+        default:
+          headerClass += " default";
+          outerDivClass += "default-div";
+          break;
+      } // once the enter player button is clicked from splash page, player is not protected but functionality is limited
+
+
+      if (this.props.location.pathname.startsWith("/player")) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "player-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+          className: "player-sidebar"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "player-sidebar-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "player-logo"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/player",
+          className: "player-logo-link"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.whiteLogo,
+          alt: "Spotifly Player Logo"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "sidebar-greeting"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_index_container__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          func: this.updateTracks.bind(this)
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          path: "/player",
+          render: function render() {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_mp3_player__WEBPACK_IMPORTED_MODULE_15__["default"], {
+              tracks: tracks.reverse()
+            });
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
+          path: "/player/settings/account",
+          component: _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          path: "/login",
+          component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          path: "/signup",
+          component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          path: "/player/playlist/:playlistId",
+          render: function render(props) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_detail_container__WEBPACK_IMPORTED_MODULE_7__["default"], _extends({}, props, {
+              func: _this2.updateTracks.bind(_this2)
+            }));
+          }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/player/createPlaylist",
+          component: _playlists_playlist_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/player/songs",
+          render: function render(props) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_index_container__WEBPACK_IMPORTED_MODULE_9__["default"], _extends({}, props, {
+              func: _this2.updateTracks.bind(_this2)
+            }));
+          }
+        })));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "wrap"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: outerDivClass
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+          className: headerClass
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: bannerContainer
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: logoWrapper
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/",
+          className: "logo-link"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: logoId,
+          src: window.logo,
+          alt: "Spotifly Logo"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: greetingContainerBoolean
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/",
+          component: _util_player_button__WEBPACK_IMPORTED_MODULE_11__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/",
+          component: _util_gallery__WEBPACK_IMPORTED_MODULE_13__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          path: "/login",
+          component: _sessionForms_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+          path: "/signup",
+          component: _sessionForms_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+        })));
+      }
+    }
+  }]);
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+; // reverse authroute for account page? will do when components exist
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(App));
 
@@ -977,6 +1068,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var playlist = this.props.playlist;
       if (!playlist) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -1008,6 +1101,7 @@ function (_React$Component) {
       }, playlist.songs.map(function (song, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_item_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: i,
+          func: _this.props.func,
           song: song,
           inPlaylist: true
         });
@@ -1866,9 +1960,13 @@ function (_React$Component) {
   _inherits(SongIndex, _React$Component);
 
   function SongIndex(props) {
+    var _this;
+
     _classCallCheck(this, SongIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SongIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SongIndex).call(this, props));
+    console.log(props);
+    return _this;
   }
 
   _createClass(SongIndex, [{
@@ -1880,7 +1978,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       // this will return all songs with button classes changing 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -1894,7 +1992,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_song_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: song.id,
           song: song,
-          currentUser: _this.props.currentUser,
+          func: _this2.props.func,
+          currentUser: _this2.props.currentUser,
           inPlaylist: false
         });
       })));
@@ -1995,21 +2094,29 @@ function (_React$Component) {
       active: false
     };
     _this.addSong = _this.addSong.bind(_assertThisInitialized(_this));
+    _this.songAddQueue = _this.songAddQueue.bind(_assertThisInitialized(_this));
     return _this;
   } // componentDidMount() {
   //   let filter = (this.props.currentUser) ? { author_id: this.props.currentUser.id } : {};
   //   this.props.requestPlaylists(filter);
   // }
-  // will not have time to implement 
-  //   addToQueue() {
-  //   const currentState = this.state.active;
-  //   this.setState({ active: !currentState });
-  // };
-  // this will change class of dropdown of currentuser.playlist from hidden to whatever new one is, also with a modal
+  // button not implemented yet
 
 
   _createClass(SongItem, [{
+    key: "songAddQueue",
+    value: function songAddQueue() {
+      var track = [{
+        img: this.props.song.img,
+        name: this.props.song.title,
+        desc: this.props.song.artist,
+        src: this.props.song.src
+      }];
+      this.props.func(track);
+    }
+  }, {
     key: "toggleClass",
+    // this will change class of dropdown of currentuser.playlist from hidden to whatever new one is, also with a modal
     value: function toggleClass() {
       var currentState = this.state.active;
       this.setState({
@@ -2079,8 +2186,11 @@ function (_React$Component) {
         className: "song-dropdown-ul"
       }, playlistLis))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: songAddQueue,
+        onClick: function onClick() {
+          return _this2.songAddQueue();
+        },
         key: "queue"
-      }, "Add to Queue"));
+      }, "Play"));
     }
   }]);
 

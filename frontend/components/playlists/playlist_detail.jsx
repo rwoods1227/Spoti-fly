@@ -4,6 +4,7 @@ import SongItemContainer from '../songs/song_item_container';
 // import ItemDetailContainer from '../items/item_detail_container';
 
 class PlaylistDetail extends React.Component {
+
   componentDidMount() {
     this.props.requestPlaylist(this.props.match.params.playlistId);
   }
@@ -36,7 +37,7 @@ class PlaylistDetail extends React.Component {
         <section className="songlist">
           <h1 className="playlist-detail-right-title">Songs</h1>
           <ul className="song-list-ul">
-            {playlist.songs.map((song,i) => <SongItemContainer key={i} song={song} inPlaylist={true}/>)}
+            {playlist.songs.map((song,i) => <SongItemContainer key={i} func={this.props.func} song={song} inPlaylist={true}/>)}
           </ul>
         </section>
         {/* <Route path="/playlist/:playlistId/item/:itemId" component={ItemDetailContainer} /> */}
