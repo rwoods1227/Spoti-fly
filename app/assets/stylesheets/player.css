@@ -88,15 +88,10 @@
   text-decoration: none;
   box-sizing: border-box;
   display: inline-block;
-  /* border-left: 10px;
-  border-left-color:rgb(7, 7, 8) */
+
  }
 
- /* need this to add remove class for left border, seems way too hard, skipping
- same thing for changing image color, seems like way more work than worth
-.sidebar-selected{
- border-left-color:#1ed760;
-} */
+
   #sidebar-nav-link > a{
   text-decoration: none;
   color: #96989c;

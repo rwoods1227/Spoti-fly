@@ -3,9 +3,7 @@
   float: left;
 }
 
-/* .header-nav-item:hover{
- background-color:#fafafa;
-} */
+
 
 .navbar-search{
   font-size: 13px;
@@ -192,13 +190,7 @@
   text-decoration: none;
 }
 
-/* .bullet{
-  color: #949494;
-}
 
-.github:hover{
-  color: #1a59a1da
-} */
 
 #unfocused > div {
   display: none;
