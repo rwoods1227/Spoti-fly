@@ -52,7 +52,7 @@ class Greeting extends React.Component {
               </div>
               <div
                 className={
-                  this.state.active ? "nav-profile-dropdown" : "hidden"
+                  this.state.active ? "nav-profile-dropdown-banner" : "hidden"
                 }
               >
                 {/* <div className="arrow-up"></div>  giving up on the tool tip triangle thing*/}

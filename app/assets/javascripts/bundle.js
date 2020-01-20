@@ -531,7 +531,7 @@ function (_React$Component) {
           component: _util_home__WEBPACK_IMPORTED_MODULE_16__["default"]
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
           exact: true,
-          path: "/search",
+          path: "/player/search",
           component: _search_search_container__WEBPACK_IMPORTED_MODULE_17__["default"]
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
           path: "/player/settings/account",
@@ -716,7 +716,7 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "nav-profile"
         }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: this.state.active ? "nav-profile-dropdown" : "hidden"
+          className: this.state.active ? "nav-profile-dropdown-banner" : "hidden"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "dropdown-ul"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1720,18 +1720,14 @@ function (_Component) {
       var _this2 = this;
 
       var songTitles = [];
-      var artistNames = [];
       this.props.songs.map(function (song) {
-        if (song.title.toLowerCase().includes(_this2.state.query.toLowerCase())) {
-          var titleAndId = [song.title, song._id];
+        if (song.title.toLowerCase().includes(_this2.state.query.toLowerCase()) || song.artist.toLowerCase().includes(_this2.state.query.toLowerCase())) {
+          var titleAndId = song;
           songTitles.push(titleAndId);
-        } else if (song.artist.toLowerCase().includes(_this2.state.query.toLowerCase())) {
-          var artistAndId = [song.title, song._id];
-          artistNames.push(artistAndId);
         }
       });
-      var data = songTitles.concat(artistNames); // console.log(data)
-      // console.log(this)
+      var data = songTitles;
+      console.log(data); // console.log(this)
 
       this.setState({
         results: data
@@ -1831,28 +1827,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _songs_song_item_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../songs/song_item_container */ "./frontend/components/songs/song_item_container.js");
+
 
 
 
 var Suggestions = function Suggestions(props) {
-  var options = props.results.map(function (r) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: r[1]
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      className: "nav-profile-dropdown-links-link",
-      to: "".concat(r[2], "/").concat(r[1])
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "nav-profile-dropdown-links-link-content"
-    }, r[0])));
-  });
+  var options = props.results.map(function (song) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_item_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: song.id,
+      song: song,
+      func: props.func,
+      inPlaylist: false
+    });
+  }); // func is currently undefined so we shall see how that goes
 
   if (options.length === 0) {
-    options = ["No Users or Questions Found :("];
+    options = ["No Matching Songs Found :("];
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    id: "index-songlist",
+    className: "songlist"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-profile-dropdown-links-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, options));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "song-list-ul"
+  }, options)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Suggestions);

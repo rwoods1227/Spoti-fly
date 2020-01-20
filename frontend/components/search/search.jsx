@@ -26,20 +26,16 @@ class Search extends Component {
 
   getInfo() {
     let songTitles = [];
-    let artistNames = [];
     this.props.songs.map(song => {
       if (
-        song.title.toLowerCase().includes(this.state.query.toLowerCase())
+        song.title.toLowerCase().includes(this.state.query.toLowerCase()) || song.artist.toLowerCase().includes(this.state.query.toLowerCase())
       ) {
-        let titleAndId = [song.title, song._id];
+        let titleAndId = song;
         songTitles.push(titleAndId);
-      } else if (song.artist.toLowerCase().includes(this.state.query.toLowerCase())){
-          let artistAndId = [song.title, song._id];
-          artistNames.push(artistAndId);
-      }
+      } 
     });
-    let data = songTitles.concat(artistNames);
-    // console.log(data)
+    let data = songTitles;
+     console.log(data)
     // console.log(this)
     this.setState({
       results: data

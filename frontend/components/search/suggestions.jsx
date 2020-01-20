@@ -1,23 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SongItemContainer from "../songs/song_item_container";
 
 const Suggestions = props => {
-  let options = props.results.map(r => (
-    <li key={r[1]}>
-      <Link className="nav-profile-dropdown-links-link" to={`${r[2]}/${r[1]}`}>
-        <div className="nav-profile-dropdown-links-link-content">{r[0]}</div>
-      </Link>
-    </li>
-  ));
-
+  let options = props.results.map(song => (
+    <SongItemContainer key={song.id} song={song} func={props.func} inPlaylist={false} />) 
+  );
+// func is currently undefined so we shall see how that goes
   if (options.length === 0) {
-    options = ["No Users or Questions Found :("];
+    options = ["No Matching Songs Found :("];
   }
 
   return (
-    <div className="nav-profile-dropdown-links-container">
-      <ul>{options}</ul>
-    </div>
+    <section id="index-songlist" className="songlist">
+      <div className="nav-profile-dropdown-links-container">
+        <ul className="song-list-ul">{options}</ul>
+      </div>
+    </section>
   );
 };
 

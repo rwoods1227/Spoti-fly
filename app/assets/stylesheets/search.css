@@ -3,9 +3,9 @@
   float: left;
 }
 
-.header-nav-item:hover{
+/* .header-nav-item:hover{
  background-color:#fafafa;
-}
+} */
 
 .navbar-search{
   font-size: 13px;
@@ -20,16 +20,17 @@
   width: 100%;
 }
 
-.navbar-search-input{
-  position: relative;
-  width: 100%;
-  z-index: 1;
-   box-sizing: border-box;
-    font-size: 15px;
+.navbar-search-input {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    font-size: 50px;
     line-height: 1.4;
-    display: block;
+    display: flex;
+    justify-content: center;
     padding: 3px 8px;
-    max-height: 29px;
+    max-height: 55px;
     min-height: auto;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -39,10 +40,13 @@
     outline: 0;
     border: 1px solid #e2e2e2;
     border-radius: 4px;
-    padding-left: 26px;
+    padding-left: 50px;
     background: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch.png-26-86c32b1ac26e4161.png) no-repeat 8px center;
-    background-size: 13px;
+    background-size: 30px;
     background-image: url(//qsf.fs.quoracdn.net/-3-images.new_grid.QuoraSearch_2x.png-26-c1b5774d1aad0f68.png);
+    color: white;
+    left: 55%;
+    top: 2%;
 }
 
 .nav-profile-dropdown{
@@ -51,11 +55,11 @@
     min-width: 180px;
     z-index: 1600;
     position: absolute;
-    top: 53px;
-    color: #333;
-    font-size: 13px;
-    left: 50%;
-    width: 260px;
+    top: 10%;
+    color: rgb(187, 181, 181);
+    font-size: 20px;
+    left: 79%;
+    width: 100%;
     margin-left: -130px;
 }
 
@@ -78,7 +82,7 @@
 
 .nav-profile-dropdown-contents{
   border-radius: 3px;
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
   border: 1px solid #ccc;
   box-shadow: 0 1px 3px rgba(200,200,200,0.7);
   padding: 0;
@@ -92,7 +96,7 @@
 .nav-profile-dropdown-inner-style{
     display: flex!important;
     flex-direction: column!important;
-    background-color: #fff!important;
+    /* background-color: #fff!important; */
 }
 
 .nav-profile-dropdown-header-container{
@@ -114,6 +118,7 @@
   border-color: #e2e2e2;
   border-radius: 0;
   border-bottom-style: solid;
+  padding-left: 10px;
 }
 
 .nav-profile-dropdown-settings-links-container{
