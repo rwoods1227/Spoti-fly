@@ -14,27 +14,8 @@ import AccountButtonsContainer from './util/account_buttons_container'
 import Gallery from "./util/gallery";
 import Player from "./player/player";
 import Playlist from "react-mp3-player";
-
-
-
-// let tracks= [
-//   {
-//     img:
-//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-//     name: "MP3",
-//     desc: "Description 1",
-//     src:
-//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
-//   },
-//   {
-//     img:
-//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-//     name: "MP3 #2",
-//     desc: "Description 2",
-//     src:
-//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
-//   }
-// ]; 
+import Home from "./util/home";
+import SearchContainer from "./search/search_container";
 
 
 
@@ -127,17 +108,10 @@ class App extends React.Component {
                 </div>
               </div>
             </header>
-            <Route
-              path="/player"
-              render={()=> (
-                <Playlist
-                  tracks={tracks}
-                />
-              )}
-            />
-            {/* <div className="musicBar"> */}
-            {/* </div> */}
-            {/* sidebar is above, any content to right is below, music player later */}
+            <Route path="/player" render={() => <Playlist tracks={tracks} />} />
+
+            <Route exact path="/player" component={Home} />
+            <Route exact path="/player/search" component={SearchContainer} />
             <UnAuthRoute
               path="/player/settings/account"
               component={AccountButtonsContainer}

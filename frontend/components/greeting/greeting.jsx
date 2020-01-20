@@ -28,31 +28,53 @@ class Greeting extends React.Component {
       return (
         <nav className="banner-nav">
           <ul className="signed-out-links">
-            <li id="nav-link" key="Premium"><Link to="/">Premium </Link></li>
-            <li id="nav-link" key="Help"><Link to="/">Help</Link></li>
-            <li id="nav-link" key="Download"><Link to="/">Download</Link></li>
+            <li id="nav-link" key="Github">
+              <a href="https://github.com/rwoods1227" target="_blank">
+                Github 
+              </a>
+            </li>
+            <li id="nav-link" key="Portfolio">
+              <a href="https://ryanwoodsdev.com" target="_blank">
+                Portfolio Site
+              </a>
+            </li>
+            {/* <li id="nav-link" key="Download"><Link to="/">Download</Link></li> */}
             <li id="nav-separator" key="separator"></li>
 
             <li className="nav-user-li">
               <div id="nav-button" onClick={this.toggleClass}>
-                <img id="profile-icon" src={window.avatarIcon} alt="profileIcon"/>
+                <img
+                  id="profile-icon"
+                  src={window.avatarIcon}
+                  alt="profileIcon"
+                />
                 <p id="nav-profile">Profile</p>
               </div>
-              <div className={this.state.active ? "nav-profile-dropdown" : "hidden"}>
+              <div
+                className={
+                  this.state.active ? "nav-profile-dropdown-banner" : "hidden"
+                }
+              >
                 {/* <div className="arrow-up"></div>  giving up on the tool tip triangle thing*/}
                 <ul className="dropdown-ul">
                   <li id="dropdown-li" key="Account">
-                    <Link id="account" to="/account">Account</Link>
+                    <Link id="account" to="/account">
+                      Account
+                    </Link>
                   </li>
                   <li id="dropdown-li" key="Logout">
-                    <input id="logout-button" type="submit" value="Logout" onClick={this.props.logout}/>
+                    <input
+                      id="logout-button"
+                      type="submit"
+                      value="Logout"
+                      onClick={this.props.logout}
+                    />
                   </li>
                 </ul>
               </div>
             </li>
           </ul>
         </nav>
-   
       );
     } else {
       return (

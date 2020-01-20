@@ -371,6 +371,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./util/gallery */ "./frontend/components/util/gallery.jsx");
 /* harmony import */ var _player_player__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./player/player */ "./frontend/components/player/player.jsx");
 /* harmony import */ var react_mp3_player__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-mp3-player */ "./node_modules/react-mp3-player/dist/index.js");
+/* harmony import */ var _util_home__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./util/home */ "./frontend/components/util/home.jsx");
+/* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -406,24 +408,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // let tracks= [
-//   {
-//     img:
-//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-//     name: "MP3",
-//     desc: "Description 1",
-//     src:
-//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Manta_Espectra/Live_in_LA_OBRA_-_REMEMBER_THE_PLACES/Manta_Espectra_-_03_-_pulses_by_bugs2.mp3"
-//   },
-//   {
-//     img:
-//       "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-//     name: "MP3 #2",
-//     desc: "Description 2",
-//     src:
-//       "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Decoder_Magazine/Lately_Kind_of_Yeah/Sturm_und_Drang/Lately_Kind_of_Yeah_-_16_-_Ant_Meets_Spider.mp3"
-//   }
-// ]; 
+
+
+
 
 var App =
 /*#__PURE__*/
@@ -538,6 +525,14 @@ function (_React$Component) {
               tracks: tracks
             });
           }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/player",
+          component: _util_home__WEBPACK_IMPORTED_MODULE_16__["default"]
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/player/search",
+          component: _search_search_container__WEBPACK_IMPORTED_MODULE_17__["default"]
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
           path: "/player/settings/account",
           component: _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__["default"]
@@ -696,20 +691,17 @@ function (_React$Component) {
           className: "signed-out-links"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Premium"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Premium ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Github"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://github.com/rwoods1227",
+          target: "_blank"
+        }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Help"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "nav-link",
-          key: "Download"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Download")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Portfolio"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://ryanwoodsdev.com",
+          target: "_blank"
+        }, "Portfolio Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-separator",
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -724,7 +716,7 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "nav-profile"
         }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: this.state.active ? "nav-profile-dropdown" : "hidden"
+          className: this.state.active ? "nav-profile-dropdown-banner" : "hidden"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "dropdown-ul"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1621,6 +1613,253 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/search/search.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/search/search.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _suggestions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./suggestions */ "./frontend/components/search/suggestions.jsx");
+/* harmony import */ var react_focus_within__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-focus-within */ "./node_modules/react-focus-within/lib/index.esm.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var Search =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Search, _Component);
+
+  function Search() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Search);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Search)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      query: "",
+      results: [],
+      activeSearch: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggleClassNameTrue", function () {
+      // console.log(this)
+      _this.setState({
+        activeSearch: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggleClassNameFalse", function () {
+      _this.setState({
+        activeSearch: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleInputChange", function () {
+      _this.setState({
+        query: _this.search.value
+      }, function () {
+        if (_this.state.query && _this.state.query.length > 1) {
+          if (_this.state.query.length % 1 === 0) {
+            _this.getInfo();
+          }
+        } else if (!_this.state.query) {
+          _this.setState({
+            results: []
+          });
+        }
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Search, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var filter = {};
+      this.props.requestSongs(filter);
+    }
+  }, {
+    key: "getInfo",
+    value: function getInfo() {
+      var _this2 = this;
+
+      var songTitles = [];
+      this.props.songs.map(function (song) {
+        if (song.title.toLowerCase().includes(_this2.state.query.toLowerCase()) || song.artist.toLowerCase().includes(_this2.state.query.toLowerCase())) {
+          var titleAndId = song;
+          songTitles.push(titleAndId);
+        }
+      });
+      var data = songTitles;
+      console.log(data); // console.log(this)
+
+      this.setState({
+        results: data
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_focus_within__WEBPACK_IMPORTED_MODULE_2__["default"], null, function (_ref) {
+        var focusProps = _ref.focusProps,
+            isFocused = _ref.isFocused;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, focusProps, {
+          className: "header-nav-item",
+          id: isFocused ? "focused" : "unfocused"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          placeholder: "Search for...",
+          ref: function ref(input) {
+            return _this3.search = input;
+          },
+          onChange: _this3.handleInputChange,
+          className: "navbar-search-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          // onClick={this.toggleClassNameFalse}
+          className: "nav-profile-dropdown" // className={
+          //   this.state.activeSearch ? " nav-profile-dropdown" : "hidden"
+          // }
+
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "nav-profile-dropdown-contents"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "nav-profile-dropdown-overflow"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "nav-profile-dropdown-inner-style"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_suggestions__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          results: _this3.state.results
+        }))))));
+      });
+    }
+  }]);
+
+  return Search;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]); //onClick={this.toggleClassNameFalse}
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_container.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/search/search_container.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+/* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/song_actions */ "./frontend/actions/song_actions.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search */ "./frontend/components/search/search.jsx");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    songs: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_1__["selectAllSongs"])(state),
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    requestSongs: function requestSongs(filter) {
+      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["requestSongs"])(filter));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_search__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/search/suggestions.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/search/suggestions.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _songs_song_item_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../songs/song_item_container */ "./frontend/components/songs/song_item_container.js");
+
+
+
+
+var Suggestions = function Suggestions(props) {
+  var options = props.results.map(function (song) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_item_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: song.id,
+      song: song,
+      func: props.func,
+      inPlaylist: false
+    });
+  }); // func is currently undefined so we shall see how that goes
+
+  if (options.length === 0) {
+    options = ["No Matching Songs Found :("];
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    id: "index-songlist",
+    className: "songlist"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-profile-dropdown-links-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "song-list-ul"
+  }, options)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Suggestions);
+
+/***/ }),
+
 /***/ "./frontend/components/sessionForms/login_form_container.js":
 /*!******************************************************************!*\
   !*** ./frontend/components/sessionForms/login_form_container.js ***!
@@ -2482,6 +2721,37 @@ var Gallery = function Gallery() {
 
 /***/ }),
 
+/***/ "./frontend/components/util/home.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/util/home.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Home = function Home() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "home-splash"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "welcome"
+  }, "Welcome to Spotifly!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "home-para"
+  }, "Spotifly is a insect themed music player site based off of Spotify. To listen to music, first create a playlist using the link on the sidebar. Then either search for a song using the search link, or go directly to the full listing of songs and add one to your playlist. Then simply select the playlist from the sidebar and all of the added songs will be ready to play by hitting the \"play\" button next to their respective titles."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "home-para"
+  }, "Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player will be seeded with two starter songs in the queue, that are ready to play immediately."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
 /***/ "./frontend/components/util/player_button.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/util/player_button.jsx ***!
@@ -2878,7 +3148,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
@@ -40825,6 +41095,236 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-focus-within/lib/index.esm.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-focus-within/lib/index.esm.js ***!
+  \**********************************************************/
+/*! exports provided: withFocusWithin, FocusWithin, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withFocusWithin", function() { return withFocusWithin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FocusWithin", function() { return FocusWithin; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
+
+
+function withFocusWithin(Component) {
+    var WrappedComponent = function WrappedComponent(_ref) {
+        var onFocus = _ref.onFocus,
+            onBlur = _ref.onBlur,
+            props = _objectWithoutProperties(_ref, ['onFocus', 'onBlur']);
+
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            FocusWithin,
+            { onFocus: onFocus, onBlur: onBlur },
+            function (_ref2) {
+                var getFocusProps = _ref2.getFocusProps,
+                    isFocused = _ref2.isFocused;
+                return typeof Component === 'string' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, getFocusProps(props)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, _extends({}, getFocusProps(props), { isFocused: isFocused }));
+            }
+        );
+    };
+    WrappedComponent.displayName = 'WithFocusWithin(' + (Component.displayName || Component.name || 'Component') + ')';
+    return WrappedComponent;
+}
+
+var FocusWithin = function (_React$Component) {
+    _inherits(FocusWithin, _React$Component);
+
+    function FocusWithin() {
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, FocusWithin);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _initialiseProps.call(_this), _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    // delay by one turn of the event loop, used to consolidate timing between
+    // FocusWithin events and native events
+
+
+    // track mouse activity within the FocusWithin container, which allows clicking inside it
+    // whenever a mousedown occurs we save the current container element, and if on mouseup
+    // we are outside the container, we emit the blur event appropriately
+    // mouseups can still occur outside the container with actual DOM focus remaining within
+    // so we do not emit blurs for those
+
+
+    FocusWithin.prototype.componentDidMount = function componentDidMount() {
+        document.addEventListener('mouseup', this.onDocumentMouseUp);
+    };
+
+    FocusWithin.prototype.componentDidUpdate = function componentDidUpdate(_, prevState) {
+        var _this2 = this;
+
+        if (prevState.isFocused && !this.state.isFocused) {
+            this.delay(function () {
+                if (_this2.isUnmounted) {
+                    return;
+                }
+                _this2.setState({
+                    isBlurring: false
+                });
+                // check if the focus manager is actually blurred for times
+                // when document click causes a consective blur -> focus
+                if (!_this2.state.isFocused) {
+                    _this2.props.onBlur({ __isFocusWithinEvent: true });
+                }
+            });
+        }
+        // check if the focus manager was focused from the outside
+        // and not from another child element
+        // delay onfocus emission to be on the same timing as blur events
+        if (!this.state.isBlurring && !prevState.isFocused && this.state.isFocused) {
+            this.delay(this.props.onFocus, { __isFocusWithinEvent: true });
+        }
+    };
+
+    FocusWithin.prototype.componentWillUnmount = function componentWillUnmount() {
+        this.isUnmounted = true;
+        document.removeEventListener('mouseup', this.onDocumentMouseUp);
+    };
+
+    FocusWithin.prototype.render = function render() {
+        return this.props.children ? this.props.children({
+            focusProps: this.getFocusProps(),
+            getFocusProps: this.getFocusProps,
+            // stabilize isFocused so that it only changes corresponding to its event emissions
+            isFocused: this.state.isFocused || this.state.isBlurring
+        }) : null;
+    };
+
+    return FocusWithin;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+FocusWithin.propTypes = {
+    onBlur: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+    onFocus: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+FocusWithin.defaultProps = {
+    onBlur: function onBlur() {},
+    onFocus: function onFocus() {}
+};
+FocusWithin.wrapComponent = withFocusWithin;
+
+var _initialiseProps = function _initialiseProps() {
+    var _this3 = this;
+
+    this.state = {
+        isBlurring: false,
+        isFocused: false };
+
+    this.delay = function (cb) {
+        for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+            args[_key2 - 1] = arguments[_key2];
+        }
+
+        return setTimeout(function () {
+            if (_this3.isUnmounted) {
+                return;
+            }
+            cb.apply(undefined, args);
+        });
+    };
+
+    this.setFocusState = function (isFocused, isFocusWithinEvent) {
+        var setStateCb = function setStateCb() {
+            if (_this3.isUnmounted) return;
+            _this3.setState(function (state) {
+                return state.isFocused === isFocused ? state : !isFocused ? {
+                    isFocused: isFocused,
+                    isBlurring: true
+                } : {
+                    isFocused: isFocused
+                };
+            });
+        };
+        // delay processing native events for one turn of the event loop
+        // to have it be on the same timing as FocusWithin events
+        if (isFocusWithinEvent) {
+            setStateCb();
+        } else {
+            _this3.delay(setStateCb);
+        }
+    };
+
+    this.onDocumentMouseUp = function (event) {
+        var container = _this3.mouseDownWithinTarget;
+        var mouseUpWithinTarget = container && container.contains(event.target);
+        var activeElementWithinTarget = container && container.contains(document.activeElement);
+        if (!activeElementWithinTarget && !mouseUpWithinTarget) {
+            _this3.setFocusState(false, _this3.lastBlurEvent ? _this3.lastBlurEvent.__isFocusWithinEvent : true);
+        }
+        _this3.mouseDownWithinTarget = null;
+        _this3.lastBlurEvent = null;
+    };
+
+    this.getFocusProps = function () {
+        var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        var _onFocus = _ref3.onFocus,
+            _onBlur = _ref3.onBlur,
+            _onMouseDown = _ref3.onMouseDown,
+            props = _objectWithoutProperties(_ref3, ['onFocus', 'onBlur', 'onMouseDown']);
+
+        return _extends({}, props, {
+            onFocus: function onFocus(event) {
+                var propagationStopped = _onFocus && _onFocus(event) === false;
+                if (propagationStopped || event && event.focusWithinDefaultPrevented) {
+                    return;
+                }
+                _this3.setFocusState(true, event && event.__isFocusWithinEvent);
+            },
+            onBlur: function onBlur(event) {
+                var propagationStopped = _onBlur && _onBlur(event) === false;
+                if (propagationStopped || event && event.focusWithinDefaultPrevented) {
+                    return;
+                }
+                // if blur event happens right after a mousedown of an element inside the FocusWithin container
+                // we don't emit the blur event immediately and check if we should emit it later after the mouseup occurs
+                if (_this3.mouseDownWithinTarget) {
+                    event.persist && event.persist();
+                    _this3.lastBlurEvent = event;
+                    return;
+                }
+                _this3.setFocusState(false, event && event.__isFocusWithinEvent);
+            },
+            onMouseDown: function onMouseDown(event) {
+                var propagationStopped = _onMouseDown && _onMouseDown(event) === false;
+                if (propagationStopped || event && event.focusWithinDefaultPrevented) {
+                    return;
+                }
+                _this3.mouseDownWithinTarget = event.currentTarget;
+            }
+        });
+    };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FocusWithin);
+
+//# sourceMappingURL=index.esm.js.map
 
 /***/ }),
 

@@ -1,0 +1,20 @@
+.home-splash{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 50px;
+    justify-content: center;
+    width: 70%;
+    text-align: center;
+    top: -100px;
+}
+
+.welcome{
+  color: rgb(16, 112, 49);
+  font-size: 50px;
+}
+
+#home-para{
+  color: white;
+  font-size: 24px;
+}
