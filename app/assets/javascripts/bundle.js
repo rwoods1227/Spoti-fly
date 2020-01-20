@@ -742,20 +742,17 @@ function (_React$Component) {
           className: "signed-out-links"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Premium"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Premium ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Github"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://github.com/rwoods1227",
+          target: "_blank"
+        }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Help"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "nav-link",
-          key: "Download"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Download")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Portfolio"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://ryanwoodsdev.com",
+          target: "_blank"
+        }, "Portfolio Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-separator",
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -44306,7 +44303,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

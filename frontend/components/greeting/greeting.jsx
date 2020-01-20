@@ -80,16 +80,27 @@ class Greeting extends React.Component {
       return (
         <nav className="banner-nav">
           <ul className="signed-out-links">
-            <li id="nav-link" key="Premium"><Link to="/">Premium </Link></li>
-            <li id="nav-link" key="Help"><Link to="/">Help</Link></li>
-            <li id="nav-link" key="Download"><Link to="/">Download</Link></li>
+            <li id="nav-link" key="Github">
+              <a href="https://github.com/rwoods1227" target="_blank">
+                Github
+              </a>
+            </li>
+            <li id="nav-link" key="Portfolio">
+              <a href="https://ryanwoodsdev.com" target="_blank">
+                Portfolio Site
+              </a>
+            </li>
             <li id="nav-separator" key="separator"></li>
 
-            <li id="signed-out-link" key="signup"><Link to="/signup">Signup </Link></li>
-            <li id="signed-out-link" key="login"><Link to="/login"> Login</Link></li>
+            <li id="signed-out-link" key="signup">
+              <Link to="/signup">Signup </Link>
+            </li>
+            <li id="signed-out-link" key="login">
+              <Link to="/login"> Login</Link>
+            </li>
           </ul>
         </nav>
-      )
+      );
     }
   }
 }
