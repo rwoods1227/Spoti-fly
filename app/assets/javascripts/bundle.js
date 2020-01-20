@@ -370,6 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./util/account_buttons_container */ "./frontend/components/util/account_buttons_container.js");
 /* harmony import */ var _util_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./util/gallery */ "./frontend/components/util/gallery.jsx");
 /* harmony import */ var _player_player__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./player/player */ "./frontend/components/player/player.jsx");
+/* harmony import */ var _player_player__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_player_player__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var react_mp3_player__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-mp3-player */ "./node_modules/react-mp3-player/dist/index.js");
 /* harmony import */ var _util_home__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./util/home */ "./frontend/components/util/home.jsx");
 /* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./search/search_container */ "./frontend/components/search/search_container.js");
@@ -824,178 +825,127 @@ var mapDipatchToProps = function mapDipatchToProps(dispatch) {
 /*!***********************************************!*\
   !*** ./frontend/components/player/player.jsx ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
- // import campfireStory from "../../../app/assets/musicFiles/undertale2.mp3"
-// import bootingUp from "../../../app/assets/musicFiles/undertale3.mp3";
-
-function getTime(time) {
-  if (!isNaN(time)) {
-    return Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2);
-  }
-}
-
-var Player =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Player, _React$Component);
-
-  function Player(props) {
-    var _this;
-
-    _classCallCheck(this, Player);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Player).call(this, props));
-    _this.sound1 = new Audio(campfireStory);
-    _this.sound2 = new Audio(bootingUp);
-    _this.state = {
-      selectedTrack: null,
-      player: "stopped",
-      currentTime: null,
-      duration: null
-    };
-    return _this;
-  }
-
-  _createClass(Player, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.player.addEventListener("timeupdate", function (e) {
-        _this2.setState({
-          currentTime: e.target.currentTime,
-          duration: e.target.duration
-        });
-      });
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.player.removeEventListener("timeupdate", function () {});
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      if (this.state.selectedTrack !== prevState.selectedTrack) {
-        var track;
-
-        switch (this.state.selectedTrack) {
-          case "Campfire Story":
-            track = sound1;
-            break;
-
-          case "Booting Up":
-            track = sound2;
-            break;
-
-          default:
-            break;
-        }
-
-        if (track) {
-          this.player.src = track;
-          this.player.play;
-          this.setState({
-            player: "playing",
-            duration: this.player.duration
-          });
-        }
-      }
-
-      if (this.state.player !== prevState.player) {
-        if (this.state.player === "paused") {
-          this.player.pause();
-        } else if (this.state.player === "stopped") {
-          this.player.pause();
-          this.player.currentTime = 0;
-          this.setState({
-            selectedTrack: null
-          });
-        } else if (this.state.player === "playing" && prevState.player === "paused") {
-          this.player.play();
-        }
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      var list = [{
-        id: 1,
-        title: "Campfire Story"
-      }, {
-        id: 2,
-        title: "Booting Up"
-      }].map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: item.id,
-          onClick: function onClick() {
-            return _this3.setState({
-              selectedTrack: item.title
-            });
-          }
-        }, item.title);
-      });
-      var currentTime = getTime(this.state.currentTime);
-      var duration = getTime(this.state.duration);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "My Little Player"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, list), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.player === "paused" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this3.setState({
-            player: "playing"
-          });
-        }
-      }, "Play"), this.state.player === "playing" && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this3.setState({
-            player: "paused"
-          });
-        }
-      }, "Pause"), this.state.player === "playing" || this.state.player === "paused" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return _this3.setState({
-            player: "stopped"
-          });
-        }
-      }, "Stop") : ""), this.state.player === "playing" || this.state.player === "paused" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, currentTime, " / ", duration) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
-        ref: function ref(_ref) {
-          return _this3.player = _ref;
-        }
-      }));
-    }
-  }]);
-
-  return Player;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Player);
+// import React from "react";
+// import ReactDOM from "react-dom";
+// function getTime(time) {
+//   if (!isNaN(time)) {
+//     return (
+//       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+//     );
+//   }
+// }
+// class Player extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.sound1 = new Audio(campfireStory);
+//     this.sound2 = new Audio(bootingUp);
+//     this.state = {
+//       selectedTrack: null,
+//       player: "stopped",
+//       currentTime: null,
+//       duration: null
+//     };
+// }
+//   componentDidMount() {
+//     this.player.addEventListener("timeupdate", e => {
+//       this.setState({
+//         currentTime: e.target.currentTime,
+//         duration: e.target.duration
+//       });
+//     });
+//   }
+//   componentWillUnmount() {
+//     this.player.removeEventListener("timeupdate", () => {});
+//   }
+//   componentDidUpdate(prevProps, prevState) {
+//     if (this.state.selectedTrack !== prevState.selectedTrack) {
+//       let track;
+//       switch (this.state.selectedTrack) {
+//         case "Campfire Story":
+//           track = sound1;
+//           break;
+//         case "Booting Up":
+//           track = sound2;
+//           break;
+//         default:
+//           break;
+//       }
+//       if (track) {
+//         this.player.src = track;
+//         this.player.play;
+//         this.setState({ player: "playing", duration: this.player.duration });
+//       }
+//     }
+//     if (this.state.player !== prevState.player) {
+//       if (this.state.player === "paused") {
+//         this.player.pause();
+//       } else if (this.state.player === "stopped") {
+//         this.player.pause();
+//         this.player.currentTime = 0;
+//         this.setState({ selectedTrack: null });
+//       } else if (
+//         this.state.player === "playing" &&
+//         prevState.player === "paused"
+//       ) {
+//         this.player.play();
+//       }
+//     }
+//   }
+//   render() {
+//     const list = [
+//       { id: 1, title: "Campfire Story" },
+//       { id: 2, title: "Booting Up" }
+//     ].map(item => {
+//       return (
+//         <li
+//           key={item.id}
+//           onClick={() => this.setState({ selectedTrack: item.title })}
+//         >
+//           {item.title}
+//         </li>
+//       );
+//     });
+//     const currentTime = getTime(this.state.currentTime);
+//     const duration = getTime(this.state.duration);
+//     return (
+//       <>
+//         <h1>My Little Player</h1>
+//         <ul>{list}</ul>
+//         <div>
+//           {this.state.player === "paused" && (
+//             <button onClick={() => this.setState({ player: "playing" })}>
+//               Play
+//             </button>
+//           )}
+//           {this.state.player === "playing" && (
+//             <button onClick={() => this.setState({ player: "paused" })}>
+//               Pause
+//             </button>
+//           )}
+//           {this.state.player === "playing" || this.state.player === "paused" ? (
+//             <button onClick={() => this.setState({ player: "stopped" })}>
+//               Stop
+//             </button>
+//           ) : (
+//             ""
+//           )}
+//         </div>
+//         {this.state.player === "playing" || this.state.player === "paused" ? (
+//           <div>
+//             {currentTime} / {duration}
+//           </div>
+//         ) : (
+//           ""
+//         )}
+//         <audio ref={ref => (this.player = ref)} />
+//       </>
+//     );
+//   }
+// }
+// export default Player;
 
 /***/ }),
 
