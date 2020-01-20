@@ -148,7 +148,6 @@
     width: 100%;
     font-weight: 700;
     text-align: center;
-    vertical-align: middle;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
@@ -251,10 +250,8 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: gray;
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
-/* fix scrollbar in heroku*/
 
 #sidebar-icon{
   height:30px;
