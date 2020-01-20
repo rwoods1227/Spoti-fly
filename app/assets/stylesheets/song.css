@@ -4,7 +4,6 @@
   width: 500px;
   padding-bottom: 150px;
   overflow-y: scroll;
-  overflow-x: ;
 }
 
 .songlist::-webkit-scrollbar {
