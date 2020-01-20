@@ -1797,7 +1797,7 @@ var Suggestions = function Suggestions(props) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    id: "index-songlist",
+    id: "index-songlist-search",
     className: "songlist"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-profile-dropdown-links-container"

@@ -12,7 +12,7 @@ const Suggestions = props => {
   }
 
   return (
-    <section id="index-songlist" className="songlist">
+    <section id="index-songlist-search" className="songlist">
       <div className="nav-profile-dropdown-links-container">
         <ul className="song-list-ul">{options}</ul>
       </div>

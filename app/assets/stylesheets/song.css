@@ -95,6 +95,13 @@
    width:100%;
    height: 100%;
    overflow-y: scroll;
+   left: 100px;
+ }
+
+ #index-songlist-search{
+   width:100%;
+   height: 100%;
+   overflow-y: scroll;
  }
 
  .all-songs-title{
