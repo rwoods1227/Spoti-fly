@@ -3,11 +3,12 @@ import Suggestions from "./suggestions";
 import FocusWithin from "react-focus-within";
 
 class Search extends Component {
-  state = {
-    query: "",
-    results: [],
-    activeSearch: false
-  };
+    state = {
+      query: "",
+      results: [],
+      activeSearch: false
+    };
+  
 
   componentDidMount() {
     let filter = {};
