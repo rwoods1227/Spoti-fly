@@ -9,116 +9,131 @@
 ## Background and Overview
 
 Spotifly is bug-themed music site based off of Spotify. With it you can learn about and experience the hottest new bands and music from the best bugs around. 
-![Spotifl Home](./screenshots/home.png)
+![Spotifly Home](./screenshots/home.png)
 ## Features and Technical Challenges
 
-### Player Models
-* Player Data drawn from 4 api calls to bring in season, weekly, projected Season, and projected weekly stats
+### Songs and Playlists
+* Song objects created with url links to hosted royalty free images and .mp3 files
 ```javascript
-//mutations.js
-createAllPlayers: {
-      type: new GraphQLList(PlayerType),
-      resolve() {
-        const promiseArr = [];
-        const allPlayers = {};
-
-        promiseArr.push(
-          axios(seasonStats).then(res => {
-            let seasonStatsArr = res.data;
-            sortJsonArray(seasonStatsArr, "PlayerID");
-            seasonStatsArr.forEach(player => {
-```
-* Player data is assembled into the Player model after the promiseArr has saved all of the intermediate data
-* Nested Promise Arrays used to secure data, and force all actions to complete and models to save in order
-```javascript
-//after assembling all data from 4 ApiCalls
-return Promise.all(promiseArr).then(() => {
-          let promiseArr = [];
-          Object.values(allPlayers).forEach(player => {
-            promiseArr.push(
-              new Player({
-                name: player.name,
-                team: player.team,
-                position: player.position,
-                IsGameOver: player.isGameOver,
-
-                weeklyPassingAttempts: player.weeklyPassingAttempts,
-                weeklyPassingCompletions: player.weeklyPassingCompletions,
-		etc….
-```
-* Large/Unified player model allows for quick transitions and filtering of player table on the frontend
-
-![FP&P Player Table](./screenshots/players.png)
-### State based content display
-
-![FP&P Main content](./screenshots/main.png)
-
-![FP&P Sidebar](./screenshots/sidebar.png)
-
-The main content is displayed using the side bar's state of the mainComponent
-```javascript
-  const [main, setMain] = useState({
-    mainComponent: BetsIndex, //default selected component
-    props: null
-  });
-  const changeMain = (mainComponent, props) => (
-    setMain(main => ({ ...main, mainComponent, props }))
-  );
-```
-This is possible by sending the changeMain function down as a prop to the sidebar and their items, and the component currently displayed as seen from the main page component
-```javascript
-  return (
-    <div className="main-page">
-      <div className="sidebar-container">
-        <Nav onAppPage={true} />
-        <SideBar changeMain={changeMain} /> //each sidebar item will use changeMain when clicked
-      </div>
-      <div className="main-content">
-        <main.mainComponent {...main.props} changeMain={changeMain} /> //the component displayed is taken from main state
-      </div>
-      <div className="right-sidebar"></div>
-    </div>
-  );
-```
-### Cron-Jobs
-Because this site uses real-world data based off of the NFL, the data for bets and fantasy leagues needs to be updated. In order to accomplish this we used cron-jobs to update bets and players on a weekly basis. 
-```javascript
-//index.js
-cron.schedule(“59 23 * * 3”, function() {
-      const nflStart = new Date("September 3, 2019 00:20:18");
-      let parsedStart = Date.parse(nflStart);
-      const nflEnd = new Date("December 30, 2019 00:20:18");
-      let parsedEnd = Date.parse(nflEnd);
-      let date = Date.now();
-      if ( date >= parsedStart && date <= parsedEnd){
-        let i = 0;
-        while((parsedStart + (i*604800000)) < date){
-          i++
+//App.jsx
+this.state = {
+      tracks: [
+        {
+          img:
+            "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+          name: "Starter Song 1",
+          desc: "Song to initialize player",
+          src:
+            "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3"
+        },
+        {
+          img:
+            "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+          name: "Starter Song 2",
+          desc: "Song to initialize player",
+          src:
+            "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
         }
-	week = i;
-        year = nflStart.getFullYear();
-  // later on in the cron-block
-       client
-          .mutate({
-            mutation: CREATE_ALL_BETS,
-            variables: {
-              url:
-                `https://api.sportsdata.io/v3/nfl/odds/json/GameOddsByWeek/${year}/${week}`
-            }
-          })
-          .then(({ data }) => {
-            console.log(data);
-          });
-      }
-    });
+      ]
 ```
-* Allows for real-life feedback, when player stats and bets update weekly in acccordance to the weekly NFL games
-* Updates on Wednesday nights to avoid overlapping with NFL games
-* Bets, Players, and Userbet models all have functions to update them weekly
+* Songs and playlists are joined through a joins table allowing them to be added into a playlist where they can be played
+* Similar to sportify, many duplicates of the same song can be added to a single playlist
+```ruby
+class PlaylistSong < ApplicationRecord
+
+  belongs_to :playlist,
+  class_name: :Playlist,
+  foreign_key: :playlist_id
 
 
-![FP&P Userbets](./screenshots/userbets.png)
+  belongs_to :song,
+  class_name: :Song,
+  foreign_key: :song_id
+
+  
+end
+```
+
+![Playlist 1](./screenshots/players.png)
+### Search
+* Search takes in queries from an input and updates the matching results based on matching characters in the song title or artist
+```javascript
+getInfo() {
+    let songTitles = [];
+    this.props.songs.map(song => {
+      if (
+        song.title.toLowerCase().includes(this.state.query.toLowerCase()) || 
+        song.artist.toLowerCase().includes(this.state.query.toLowerCase())
+      ) {
+        let titleAndId = song;
+        songTitles.push(titleAndId);
+      } 
+    });
+    let data = songTitles;
+    this.setState({
+      results: data
+    });
+  }
+```
+* These matches are fed into a sugestions compontent that converts each into a song item
+* These song items are then listed without duplicates in order to allow the user to add songs into a playlist
+```Javascript
+const Suggestions = props => {
+  let options = props.results.map(song => (
+    <SongItemContainer key={song.id} song={song} func={props.func} inPlaylist={false} />) 
+  );
+  if (options.length === 0) {
+    options = ["No Matching Songs Found :("];
+  }
+
+  return (
+    <section id="index-songlist-search" className="songlist">
+      <div className="nav-profile-dropdown-links-container">
+        <ul className="song-list-ul">{options}</ul>
+      </div>
+    </section>
+  );
+};
+```
+![Spotifly Search](./screenshots/players.png)
+
+### Path-based Styling
+* Styling of some components is based off of the url pathname to provide dryer code
+```javascript
+//App.jsx
+switch (this.props.location.pathname) {
+      case "/signup":
+        headerClass += " signup";
+        outerDivClass += "signup-div";
+        greetingContainerBoolean += "hidden";
+        bannerContainer += " signup";
+        logoWrapper += " signup";
+        logoId = "auth-logo";
+        break;
+      case "/login":
+        headerClass += " login";
+        outerDivClass += "login-div";
+        greetingContainerBoolean += "hidden";
+        bannerContainer += " login";
+        logoWrapper += " login";
+        logoId = "auth-logo";
+        break;
+      case "/account":
+        headerClass += " account";
+        outerDivClass += "account-div";
+        break;
+      default:
+        headerClass += " default";
+        outerDivClass += "default-div";
+        break;
+    }
+```
+* Used to style components and in and if else to separate the two main sites(player and sign-in/splash)
+* 
+
+
+
 
 ## Upcoming Additions
 - albums
--searh expansion
+- searh expansion
