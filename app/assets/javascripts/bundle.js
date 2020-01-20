@@ -371,6 +371,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_gallery__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./util/gallery */ "./frontend/components/util/gallery.jsx");
 /* harmony import */ var _player_player__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./player/player */ "./frontend/components/player/player.jsx");
 /* harmony import */ var react_mp3_player__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-mp3-player */ "./node_modules/react-mp3-player/dist/index.js");
+/* harmony import */ var _util_home__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./util/home */ "./frontend/components/util/home.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -390,6 +391,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -538,6 +540,10 @@ function (_React$Component) {
               tracks: tracks
             });
           }
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/player",
+          component: _util_home__WEBPACK_IMPORTED_MODULE_16__["default"]
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util_logged_out__WEBPACK_IMPORTED_MODULE_6__["UnAuthRoute"], {
           path: "/player/settings/account",
           component: _util_account_buttons_container__WEBPACK_IMPORTED_MODULE_12__["default"]
@@ -696,20 +702,17 @@ function (_React$Component) {
           className: "signed-out-links"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Premium"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Premium ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Github"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://github.com/rwoods1227",
+          target: "_blank"
+        }, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-link",
-          key: "Help"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Help")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "nav-link",
-          key: "Download"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/"
-        }, "Download")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "Portfolio"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://ryanwoodsdev.com",
+          target: "_blank"
+        }, "Portfolio Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "nav-separator",
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -2482,6 +2485,37 @@ var Gallery = function Gallery() {
 
 /***/ }),
 
+/***/ "./frontend/components/util/home.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/util/home.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var Home = function Home() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "home-splash"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "welcome"
+  }, "Welcome to Spotifly!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "home-para"
+  }, "Spotifly is a insect themed music player site based off of Spotify. To listen to music, first create a playlist using the link on the sidebar. Then either search for a song using the search link, or go directly to the full listing of songs and add one to your playlist. Then simply select the playlist from the sidebar and all of the added songs will be ready to play by hitting the \"play\" button next to their respective titles."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "home-para"
+  }, "Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player will be seeded with two starter songs in the queue, that are ready to play immediately."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
 /***/ "./frontend/components/util/player_button.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/util/player_button.jsx ***!
@@ -2878,7 +2912,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);

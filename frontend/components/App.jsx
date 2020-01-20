@@ -14,6 +14,7 @@ import AccountButtonsContainer from './util/account_buttons_container'
 import Gallery from "./util/gallery";
 import Player from "./player/player";
 import Playlist from "react-mp3-player";
+import Home from "./util/home";
 
 
 
@@ -127,17 +128,13 @@ class App extends React.Component {
                 </div>
               </div>
             </header>
+            <Route path="/player" render={() => <Playlist tracks={tracks} />} />
+
             <Route
+              exact
               path="/player"
-              render={()=> (
-                <Playlist
-                  tracks={tracks}
-                />
-              )}
+              component={Home}
             />
-            {/* <div className="musicBar"> */}
-            {/* </div> */}
-            {/* sidebar is above, any content to right is below, music player later */}
             <UnAuthRoute
               path="/player/settings/account"
               component={AccountButtonsContainer}
