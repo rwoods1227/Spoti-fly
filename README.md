@@ -9,7 +9,7 @@
 ## Background and Overview
 
 Spotifly is bug-themed music site based off of Spotify. With it you can learn about and experience the hottest new bands and music from the best bugs around. 
-![Spotifly Home](./screenshots/home.png)
+![Spotifly Home](./screenshots/spotifly-splash.png)
 ## Features and Technical Challenges
 
 ### Songs and Playlists
@@ -54,7 +54,7 @@ class PlaylistSong < ApplicationRecord
 end
 ```
 
-![Playlist 1](./screenshots/players.png)
+![Playlist 1](./screenshots/spotifly-playlist.png)
 ### Search
 * Search takes in queries from an input and updates the matching results based on matching characters in the song title or artist
 ```javascript
@@ -95,7 +95,7 @@ const Suggestions = props => {
   );
 };
 ```
-![Spotifly Search](./screenshots/players.png)
+![Spotifly Search](./screenshots/spotifly-search.png)
 
 ### Path-based Styling
 * Styling of some components is based off of the url pathname to provide dryer code
@@ -130,9 +130,9 @@ switch (this.props.location.pathname) {
 ```
 * Used to style components and in and if else to separate the two main sites(player and sign-in/splash)
 
-![Spotifly splash-header](./screenshots/players.png)
-![Spotifly login-header](./screenshots/players.png)
-![Spotifly sidebar-header](./screenshots/players.png)
+![Spotifly splash-header](./screenshots/spotifly-navbar1.png)
+![Spotifly login-header](./screenshots/spotifly-navbar2.png)
+![Spotifly sidebar-header](./screenshots/spotifly-sidebar.png)
 
 
 ## Upcoming Additions
