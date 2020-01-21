@@ -28,15 +28,14 @@ class Search extends Component {
     let songTitles = [];
     this.props.songs.map(song => {
       if (
-        song.title.toLowerCase().includes(this.state.query.toLowerCase()) || song.artist.toLowerCase().includes(this.state.query.toLowerCase())
+        song.title.toLowerCase().includes(this.state.query.toLowerCase()) || 
+        song.artist.toLowerCase().includes(this.state.query.toLowerCase())
       ) {
         let titleAndId = song;
         songTitles.push(titleAndId);
       } 
     });
     let data = songTitles;
-     console.log(data)
-    // console.log(this)
     this.setState({
       results: data
     });
@@ -76,13 +75,7 @@ class Search extends Component {
               onChange={this.handleInputChange}
               className="navbar-search-input"
             />
-            <div
-              // onClick={this.toggleClassNameFalse}
-              className="nav-profile-dropdown"
-              // className={
-              //   this.state.activeSearch ? " nav-profile-dropdown" : "hidden"
-              // }
-            >
+            <div className="nav-profile-dropdown" >
               <div className="nav-profile-dropdown-contents">
                 <div className="nav-profile-dropdown-overflow">
                   <div className="nav-profile-dropdown-inner-style">
@@ -97,5 +90,4 @@ class Search extends Component {
     );
   }
 }
-//onClick={this.toggleClassNameFalse}
 export default Search;

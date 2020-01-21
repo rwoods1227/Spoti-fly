@@ -6,7 +6,6 @@ const Suggestions = props => {
   let options = props.results.map(song => (
     <SongItemContainer key={song.id} song={song} func={props.func} inPlaylist={false} />) 
   );
-// func is currently undefined so we shall see how that goes
   if (options.length === 0) {
     options = ["No Matching Songs Found :("];
   }

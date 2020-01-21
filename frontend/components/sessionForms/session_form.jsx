@@ -59,9 +59,6 @@ class SessionForm extends React.Component {
                     <input type="text" value={this.state.email} placeholder="Email" onChange={this.handleInput("email")} />
                   </li>
                   <li className="signup-form-li">
-                    <input type="text" value={this.state.email} placeholder="Confirm Email(not functional)" onChange={this.handleInput("email")} />
-                  </li>
-                  <li className="signup-form-li">
                     <input type="password" value={this.state.password} placeholder="Password" onChange={this.handleInput("password")} />
                   </li>
                   <li className="signup-form-li">
