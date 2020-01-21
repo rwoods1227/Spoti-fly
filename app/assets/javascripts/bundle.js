@@ -1674,8 +1674,6 @@ function (_Component) {
         }
       });
       var data = songTitles;
-      console.log(data); // console.log(this)
-
       this.setState({
         results: data
       });
@@ -1699,11 +1697,7 @@ function (_Component) {
           onChange: _this3.handleInputChange,
           className: "navbar-search-input"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          // onClick={this.toggleClassNameFalse}
-          className: "nav-profile-dropdown" // className={
-          //   this.state.activeSearch ? " nav-profile-dropdown" : "hidden"
-          // }
-
+          className: "nav-profile-dropdown"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "nav-profile-dropdown-contents"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1718,8 +1712,7 @@ function (_Component) {
   }]);
 
   return Search;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]); //onClick={this.toggleClassNameFalse}
-
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
 
@@ -1787,7 +1780,7 @@ var Suggestions = function Suggestions(props) {
       func: props.func,
       inPlaylist: false
     });
-  }); // func is currently undefined so we shall see how that goes
+  });
 
   if (options.length === 0) {
     options = ["No Matching Songs Found :("];
@@ -1964,13 +1957,6 @@ function (_React$Component) {
           type: "text",
           value: this.state.email,
           placeholder: "Email",
-          onChange: this.handleInput("email")
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          className: "signup-form-li"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          value: this.state.email,
-          placeholder: "Confirm Email(not functional)",
           onChange: this.handleInput("email")
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "signup-form-li"
@@ -44303,7 +44289,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
