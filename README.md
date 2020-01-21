@@ -129,9 +129,10 @@ switch (this.props.location.pathname) {
     }
 ```
 * Used to style components and in and if else to separate the two main sites(player and sign-in/splash)
-* 
 
-
+![Spotifly splash-header](./screenshots/players.png)
+![Spotifly login-header](./screenshots/players.png)
+![Spotifly sidebar-header](./screenshots/players.png)
 
 
 ## Upcoming Additions
