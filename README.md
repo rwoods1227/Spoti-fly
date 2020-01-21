@@ -137,4 +137,4 @@ switch (this.props.location.pathname) {
 
 ## Upcoming Additions
 - albums
-- searh expansion
+- search expansion
