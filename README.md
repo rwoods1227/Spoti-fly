@@ -54,7 +54,7 @@ class PlaylistSong < ApplicationRecord
 end
 ```
 
-![Playlist 1](./screenshots/spotifly-playlist.png)
+![Playlist 1](./screenshots/Spotifly-playlist.png)
 ### Search
 * Search takes in queries from an input and updates the matching results based on matching characters in the song title or artist
 ```javascript
