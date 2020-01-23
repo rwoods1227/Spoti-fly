@@ -42,7 +42,6 @@ class App extends React.Component {
         }
       ]
     };
-    console.log(props)
   }
 
   updateTracks(evt) {
@@ -108,7 +107,7 @@ class App extends React.Component {
                 </div>
               </div>
             </header>
-            <AuthRoute path="/player" render={() => <Playlist tracks={tracks} />} />
+            <Route path="/player" render={() => <Playlist tracks={tracks} />} />
 
             <Route exact path="/player" component={Home} />
             <Route exact path="/player/search" component={SearchContainer} />

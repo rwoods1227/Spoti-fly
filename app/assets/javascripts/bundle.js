@@ -437,7 +437,6 @@ function (_React$Component) {
         src: "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
       }]
     };
-    console.log(props);
     return _this;
   }
 
@@ -1421,24 +1420,6 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/player"
         }, "Home ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "sidebar-nav-link",
-          key: "Search"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          id: "sidebar-icon",
-          src: window.searchIcon,
-          alt: "Add Playlist"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/player"
-        }, "Search")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          id: "sidebar-nav-link",
-          key: "Your Library"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          id: "sidebar-icon",
-          src: window.libraryIcon,
-          alt: "Add Playlist"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/player"
-        }, "Your Library")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "sidebar-nav-separator",
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -44289,7 +44270,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
