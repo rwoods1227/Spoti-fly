@@ -8,7 +8,7 @@
 
 ## Background and Overview
 
-Spotifly is bug-themed music site based off of Spotify. Spotifly allows you to listen the hottest new bands and music from the best bugs around in one place, be carful not to get an earworm! 
+Spotifly is bug-themed music site based off of Spotify. Spotifly allows you to listen the hottest new music from the best bugs around, be carful not to get an earworm! 
 ![Spotifly Home](./screenshots/spotifly-splash.png)
 ## Features and Technical Challenges
 
