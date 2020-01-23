@@ -108,7 +108,7 @@ class App extends React.Component {
                 </div>
               </div>
             </header>
-            <Route path="/player" render={() => <Playlist tracks={tracks} />} />
+            <AuthRoute path="/player" render={() => <Playlist tracks={tracks} />} />
 
             <Route exact path="/player" component={Home} />
             <Route exact path="/player/search" component={SearchContainer} />

@@ -72,8 +72,6 @@ import { Route, Link } from "react-router-dom";
         <nav className="sidebar-nav">
           <ul className="sidebar-links">
             <li id="sidebar-nav-link" key="Home"><img id="sidebar-icon" src={window.homeIcon} alt="Add Playlist" /><Link to="/player">Home </Link></li>
-            <li id="sidebar-nav-link" key="Search"><img id="sidebar-icon" src={window.searchIcon} alt="Add Playlist" /><Link to="/player">Search</Link></li>
-            <li id="sidebar-nav-link" key="Your Library"><img id="sidebar-icon" src={window.libraryIcon} alt="Add Playlist" /><Link to="/player">Your Library</Link></li>
 
             <li id="sidebar-nav-separator" key="separator"></li>
             <li id="sidebar-signed-out-link">
