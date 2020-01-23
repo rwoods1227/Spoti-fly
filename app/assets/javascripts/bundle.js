@@ -2528,106 +2528,106 @@ __webpack_require__.r(__webpack_exports__);
 
 var Gallery = function Gallery() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    "class": "gallery"
+    className: "gallery"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "container"
+    className: "container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "grid"
+    className: "grid"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "column-xs-12 column-md-4"
+    className: "column-xs-12 column-md-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    "class": "img-container"
+    className: "img-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "gallery-img-size",
     src: window.Moth
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
-    "class": "img-content"
+    className: "img-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "TMMTF"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "class": "img-content-hover"
+    className: "img-content-hover"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "TMMTF"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "column-xs-12 column-md-4"
+    className: "column-xs-12 column-md-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    "class": "img-container"
+    className: "img-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "gallery-img-size",
     src: window.Buzz
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
-    "class": "img-content"
+    className: "img-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "The Buzz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "class": "img-content-hover"
+    className: "img-content-hover"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "The Buzz"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "column-xs-12 column-md-4"
+    className: "column-xs-12 column-md-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    "class": "img-container"
+    className: "img-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "gallery-img-size",
     src: window.XO
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
-    "class": "img-content"
+    className: "img-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "XO-Skeltons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "class": "img-content-hover"
+    className: "img-content-hover"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "XO-Skeltons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "column-xs-12 column-md-6"
+    className: "column-xs-12 column-md-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    "class": "img-container"
+    className: "img-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "gallery-img-size",
     src: window.Dung
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
-    "class": "img-content"
+    className: "img-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "The Dung Beetles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "class": "img-content-hover"
+    className: "img-content-hover"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "The Dung Beetles"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "column-xs-12 column-md-6"
+    className: "column-xs-12 column-md-6"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", {
-    "class": "img-container"
+    className: "img-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     id: "gallery-img-size",
     src: window.Daddy
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figcaption", {
-    "class": "img-content"
+    className: "img-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "Daddy SongLegs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    "class": "img-content-hover"
+    className: "img-content-hover"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    "class": "title"
+    className: "title"
   }, "Daddy SongLegs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    "class": "category"
+    className: "category"
   }, "Artist")))))));
 };
 
