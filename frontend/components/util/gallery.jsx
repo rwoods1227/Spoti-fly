@@ -2,71 +2,71 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Gallery = () => (
-  <section class="gallery">
-    <div class="container">
-      <div class="grid">
-        <div class="column-xs-12 column-md-4">
-          <figure class="img-container">
+  <section className="gallery">
+    <div className="container">
+      <div className="grid">
+        <div className="column-xs-12 column-md-4">
+          <figure className="img-container">
             <img id="gallery-img-size" src={window.Moth} />
-            <figcaption class="img-content">
-              <h2 class="title">TMMTF</h2>
-              <h3 class="category">Artist</h3>
+            <figcaption className="img-content">
+              <h2 className="title">TMMTF</h2>
+              <h3 className="category">Artist</h3>
             </figcaption>
-            <span class="img-content-hover">
-              <h2 class="title">TMMTF</h2>
-              <h3 class="category">Artist</h3>
+            <span className="img-content-hover">
+              <h2 className="title">TMMTF</h2>
+              <h3 className="category">Artist</h3>
             </span>
           </figure>
         </div>
-        <div class="column-xs-12 column-md-4">
-          <figure class="img-container">
+        <div className="column-xs-12 column-md-4">
+          <figure className="img-container">
             <img id="gallery-img-size" src={window.Buzz} />
-            <figcaption class="img-content">
-              <h2 class="title">The Buzz</h2>
-              <h3 class="category">Artist</h3>
+            <figcaption className="img-content">
+              <h2 className="title">The Buzz</h2>
+              <h3 className="category">Artist</h3>
             </figcaption>
-            <span class="img-content-hover">
-              <h2 class="title">The Buzz</h2>
-              <h3 class="category">Artist</h3>
+            <span className="img-content-hover">
+              <h2 className="title">The Buzz</h2>
+              <h3 className="category">Artist</h3>
             </span>
           </figure>
         </div>
-        <div class="column-xs-12 column-md-4">
-          <figure class="img-container">
+        <div className="column-xs-12 column-md-4">
+          <figure className="img-container">
             <img id="gallery-img-size" src={window.XO} />
-            <figcaption class="img-content">
-              <h2 class="title">XO-Skeltons</h2>
-              <h3 class="category">Artist</h3>
+            <figcaption className="img-content">
+              <h2 className="title">XO-Skeltons</h2>
+              <h3 className="category">Artist</h3>
             </figcaption>
-            <span class="img-content-hover">
-              <h2 class="title">XO-Skeltons</h2>
-              <h3 class="category">Artist</h3>
+            <span className="img-content-hover">
+              <h2 className="title">XO-Skeltons</h2>
+              <h3 className="category">Artist</h3>
             </span>
           </figure>
         </div>
-        <div class="column-xs-12 column-md-6">
-          <figure class="img-container">
+        <div className="column-xs-12 column-md-6">
+          <figure className="img-container">
             <img id="gallery-img-size" src={window.Dung} />
-            <figcaption class="img-content">
-              <h2 class="title">The Dung Beetles</h2>
-              <h3 class="category">Artist</h3>
+            <figcaption className="img-content">
+              <h2 className="title">The Dung Beetles</h2>
+              <h3 className="category">Artist</h3>
             </figcaption>
-            <span class="img-content-hover">
-              <h2 class="title">The Dung Beetles</h2>
-              <h3 class="category">Artist</h3>
+            <span className="img-content-hover">
+              <h2 className="title">The Dung Beetles</h2>
+              <h3 className="category">Artist</h3>
             </span>
           </figure>
         </div>
-        <div class="column-xs-12 column-md-6">
-          <figure class="img-container">
+        <div className="column-xs-12 column-md-6">
+          <figure className="img-container">
             <img id="gallery-img-size" src={window.Daddy} />
-            <figcaption class="img-content">
-              <h2 class="title">Daddy SongLegs</h2>
-              <h3 class="category">Artist</h3>
+            <figcaption className="img-content">
+              <h2 className="title">Daddy SongLegs</h2>
+              <h3 className="category">Artist</h3>
             </figcaption>
-            <span class="img-content-hover">
-              <h2 class="title">Daddy SongLegs</h2>
-              <h3 class="category">Artist</h3>
+            <span className="img-content-hover">
+              <h2 className="title">Daddy SongLegs</h2>
+              <h3 className="category">Artist</h3>
             </span>
           </figure>
         </div>
