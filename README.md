@@ -136,5 +136,6 @@ switch (this.props.location.pathname) {
 
 
 ## Upcoming Additions
+- make custom music player to have better control over it
 - albums
 - search expansion
