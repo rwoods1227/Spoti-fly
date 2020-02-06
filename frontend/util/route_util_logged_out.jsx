@@ -7,7 +7,7 @@ const unAuth = ({ component: Component, path, loggedIn, exact }) => (
     path={path}
     exact={exact}
     render={props =>
-      loggedIn ? <Component {...props} /> : <Redirect to="/player" />
+      loggedIn ? <Component {...props} /> : <Redirect to="/" />
     }
   />
 );

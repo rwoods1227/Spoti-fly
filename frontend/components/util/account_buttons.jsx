@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// too much trouble to have this along with the 3rd party player... depreciated until further notice
 
 class AccountButtons extends React.Component {
 

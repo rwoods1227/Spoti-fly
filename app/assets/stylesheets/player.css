@@ -207,6 +207,9 @@
    bottom: 9px;
    left: 20px;
  }
+ #sidebar-nav-profile{
+   color: whitesmoke;
+ }
 
  .playlists{
    display: flex;

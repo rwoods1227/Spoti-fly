@@ -17,7 +17,7 @@ import Playlist from "react-mp3-player";
 import Home from "./util/home";
 import SearchContainer from "./search/search_container";
 
-
+// testing just making a non playing song as the intializer, editong the src link
 
 class App extends React.Component {
   constructor(props) {
@@ -30,16 +30,16 @@ class App extends React.Component {
           name: "Starter Song 1",
           desc: "Song to initialize player",
           src:
-            "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3"
+            "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3(badlink)"
         },
-        {
-          img:
-            "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-          name: "Starter Song 2",
-          desc: "Song to initialize player",
-          src:
-            "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
-        }
+        // {
+        //   img:
+        //     "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+        //   name: "Starter Song 2",
+        //   desc: "Song to initialize player",
+        //   src:
+        //     "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
+        // }
       ]
     };
   }

@@ -92,12 +92,12 @@ class Greeting extends React.Component {
             </li>
             <li id="nav-separator" key="separator"></li>
 
-            <li id="signed-out-link" key="signup">
-              <Link to="/signup">Signup </Link>
-            </li>
-            <li id="signed-out-link" key="login">
-              <Link to="/login"> Login</Link>
-            </li>
+            
+            <li id="signed-out-link" key="signup"><Link to="/signup">Signup</Link></li>
+            
+            
+            <li id="signed-out-link" key="login"><Link to="/login">Login</Link></li>
+            
           </ul>
         </nav>
       );
