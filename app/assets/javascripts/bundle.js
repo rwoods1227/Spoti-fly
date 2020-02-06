@@ -411,7 +411,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
+ // testing just making a non playing song as the intializer, editong the src link
 
 var App =
 /*#__PURE__*/
@@ -429,13 +429,16 @@ function (_React$Component) {
         img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
         name: "Starter Song 1",
         desc: "Song to initialize player",
-        src: "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3"
-      }, {
-        img: "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
-        name: "Starter Song 2",
-        desc: "Song to initialize player",
-        src: "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
-      }]
+        src: "https://ia600901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_12_-_dreamland_64kb.mp3(badlink)"
+      } // {
+      //   img:
+      //     "https://icon-library.net/images/music-icon-transparent/music-icon-transparent-11.jpg",
+      //   name: "Starter Song 2",
+      //   desc: "Song to initialize player",
+      //   src:
+      //     "https://ia800901.us.archive.org/7/items/exp037/wrexsoul_-_alchemy_sound_-_03_-_2000_fathoms_and_diving_64kb.mp3"
+      // }
+      ]
     };
     return _this;
   }
@@ -759,12 +762,12 @@ function (_React$Component) {
           key: "signup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/signup"
-        }, "Signup ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        }, "Signup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "signed-out-link",
           key: "login"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"
-        }, " Login"))));
+        }, "Login"))));
       }
     }
   }]);
@@ -1395,15 +1398,13 @@ function (_React$Component) {
           className: "playlists"
         }, playlistLis)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sidebar-account-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/player/settings/account"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           id: "sidebar-icon",
           src: window.avatarIcon,
           alt: "profileIcon"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "sidebar-nav-profile"
-        }, this.props.currentUser.username))))));
+        }, this.props.currentUser.username)))));
       } else {
         // give the sidebar-signed-out-link the same styling as all of my buttons
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
@@ -1424,16 +1425,16 @@ function (_React$Component) {
           key: "separator"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           id: "sidebar-signed-out-link"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/signup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           id: "sidebar-signed-out-link-login-btn",
           key: "signup"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/signup"
-        }, "Signup ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Signup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/login"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           id: "sidebar-signed-out-link-signup-btn",
           key: "login"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          to: "/login"
         }, " Login")))));
       }
     }
@@ -2415,7 +2416,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
+ // too much trouble to have this along with the 3rd party player... depreciated until further notice
 
 var AccountButtons =
 /*#__PURE__*/
@@ -2659,9 +2660,7 @@ var Home = function Home() {
     id: "home-para"
   }, "Spotifly is a insect themed music player site based off of Spotify. To listen to music, first create a playlist using the link on the sidebar. Then either search for a song using the search link, or go directly to the full listing of songs and add one to your playlist. Then simply select the playlist from the sidebar and all of the added songs will be ready to play by hitting the \"play\" button next to their respective titles."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     id: "home-para"
-  }, "Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player will be seeded with two starter songs in the queue, that are ready to play immediately."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    id: "home-para"
-  }, "(Bug: Leaving the music player on while logging in and out will initialize multiple howler audio objects causing echoing. Refresh Page to fix.) "));
+  }, "Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player is seeded with one starter song in the queue to initialize the player. This song will not play music."));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
@@ -3241,7 +3240,7 @@ var unAuth = function unAuth(_ref) {
     exact: exact,
     render: function render(props) {
       return loggedIn ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["Redirect"], {
-        to: "/player"
+        to: "/"
       });
     }
   });

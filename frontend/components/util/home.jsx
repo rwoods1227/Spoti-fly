@@ -8,9 +8,8 @@ const Home = () => (
     link on the sidebar. Then either search for a song using the search link, or go directly to the full listing of songs and add one to your playlist. Then simply select the playlist from the sidebar
     and all of the added songs will be ready to play by hitting the "play" button next to their respective titles.</p>
     <p id="home-para">
-      Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player will be seeded with two starter songs in the queue, that are ready to play immediately.
+      Each song will be added to the top of the queue when played, and you can naviagate through the song queue using the arrow buttons or the queue list button. Additionally, the player is seeded with one starter song in the queue to initialize the player. This song will not play music.
     </p>
-    <p id="home-para">(Bug: Leaving the music player on while logging in and out will initialize multiple howler audio objects causing echoing. Refresh Page to fix.) </p>
   </div>
 );
 

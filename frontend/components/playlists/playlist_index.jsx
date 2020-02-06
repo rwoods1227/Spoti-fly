@@ -56,10 +56,11 @@ import { Route, Link } from "react-router-dom";
                 </ul>
               </div>
               <div className="sidebar-account-div">
-                <Link to="/player/settings/account">
+                {/* can't get the music player to clear cache of html request currently, seems like too much work taking out movement between splach and players */}
+                {/* <Link to="/player/settings/account"> */}
                   <img id="sidebar-icon" src={window.avatarIcon} alt="profileIcon" />
                   <p id="sidebar-nav-profile">{this.props.currentUser.username}</p>
-                </Link>
+                {/* </Link> */}
               </div>
             </li>
           </ul>
@@ -75,8 +76,8 @@ import { Route, Link } from "react-router-dom";
 
             <li id="sidebar-nav-separator" key="separator"></li>
             <li id="sidebar-signed-out-link">
-              <button id="sidebar-signed-out-link-login-btn" key="signup"><Link to="/signup">Signup </Link></button>
-              <button id="sidebar-signed-out-link-signup-btn" key="login"><Link to="/login"> Login</Link></button>
+              <Link to="/signup"><button id="sidebar-signed-out-link-login-btn" key="signup">Signup</button></Link>
+              <Link to="/login"><button id="sidebar-signed-out-link-signup-btn" key="login"> Login</button></Link>
             </li>
           </ul>
           {/* <Route path="player/playlist/:playlistId" component={PlaylistDetailContainer} /> */}
